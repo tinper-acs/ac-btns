@@ -29,10 +29,11 @@ $primaryColor : #e14c46;
         &.u-button-primary{
             background-color: $primaryColor;
             color: #fff;
+            border: 1px solid #f53c32;
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
             &:hover{
                 background-color: #d7332c;
                 color: #fff;
-                box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
             }
         }
         &.ac-btns-search{
