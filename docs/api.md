@@ -8,7 +8,7 @@
 
 ```
     import Btns from 'ac-btns';
-    import ac-btns/build/Btns.css;
+    import 'ac-btns/build/Btns.css';
 
 ```
 
