@@ -9,7 +9,7 @@ import Icon from 'bee-icon';
 let defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',
 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',
 'printpreview', 'printdesign', 'upload','addRow','delRow','copyRow',
-'max','copyToEnd','other']
+'max','copyToEnd','other','min']
 
 
 const propTypes = {
@@ -59,6 +59,10 @@ class Btns extends Component {
                     case 'max':
                         return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
                                     <Icon type='uf-maxmize'/>
+                                </Button>
+                    case 'min':
+                        return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                                    <Icon type='uf-minimize'/>
                                 </Button>
                     case 'other':
                         return itemProps
