@@ -76,7 +76,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 	
-	var Demo1 = __webpack_require__(268);var Demo2 = __webpack_require__(272);var Demo3 = __webpack_require__(273);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 基本使用", "code": "/**\n *\n * @title 基本使用\n * @description 基本使用\n *\n */\nimport React, { Component } from 'react';\nimport  Btns  from 'ac-btns';\n\n\nlet btns = {\n    add: {\n        onClick: () => {\n            console.log('add')\n        }\n    },\n    search: {\n        onClick: () => {\n            console.log('search')\n        }\n    },\n    clear: {\n        onClick: () => {\n            console.log('clear')\n        }\n    },\n    export: {\n        onClick: () => {\n            console.log('export')\n        }\n    },\n    save: {\n        onClick: () => {\n            console.log('save')\n        }\n    },\n    cancel: {\n        onClick: () => {\n            console.log('cancel')\n        }\n    },\n    update: {\n        onClick: () => {\n            console.log('update')\n        }\n    },\n    delete: {\n        onClick: () => {\n            console.log('delete')\n        }\n    },\n    pbmsubmit: {\n        onClick: () => {\n            console.log('pbmsubmit')\n        }\n    },\n    pbmcancle: {\n        onClick: () => {\n            console.log('pbmcancle')\n        }\n    },\n    pbmapprove: {\n        onClick: () => {\n            console.log('pbmapprove')\n        }\n    },\n    printpreview: {\n        onClick: () => {\n            console.log('printpreview')\n        }\n    },\n    printdesign: {\n        onClick: () => {\n            console.log('printdesign')\n        }\n    },\n    upload: {\n        onClick: () => {\n            console.log('upload')\n        }\n    },\n    addRow: {\n        onClick: () => {\n            console.log('addRow')\n        }\n    },\n    delRow: {\n        onClick: () => {\n            console.log('delRow')\n        }\n    },\n    copyRow: {\n        onClick: () => {\n            console.log('copyRow')\n        }\n    },\n    copyToEnd: {\n        onClick: () => {\n            console.log('copyToEnd')\n        }\n    },\n    max: {\n        onClick: () => {\n            console.log('max')\n        }\n    },\n}\n\nclass Demo1 extends Component {\n\n    render() {\n        return <Btns btns = {btns} />\n    }\n}\n", "desc": " 基本使用" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 不使用 Button 按钮", "code": "/**\n *\n * @title 不使用 Button 按钮\n * @description isBtn={false} \n *\n */\nimport React, { Component } from 'react';\nimport  Btns  from 'ac-btns';\n\n\nlet powerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',\n                'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',\n                'printpreview', 'printdesign', 'upload','addRow','delRow','copyRow',\n                'max','copyToEnd']\n\nlet btns = {\n    add: {\n        onClick: () => {\n            console.log('add')\n        }\n    },\n    search: {\n        onClick: () => {\n            console.log('search')\n        }\n    },\n    clear: {\n        onClick: () => {\n            console.log('clear')\n        }\n    },\n    export: {\n        onClick: () => {\n            console.log('export')\n        }\n    },\n    save: {\n        onClick: () => {\n            console.log('save')\n        }\n    },\n    cancel: {\n        onClick: () => {\n            console.log('cancel')\n        }\n    },\n    update: {\n        onClick: () => {\n            console.log('update')\n        }\n    },\n    delete: {\n        onClick: () => {\n            console.log('delete')\n        }\n    },\n    pbmsubmit: {\n        onClick: () => {\n            console.log('pbmsubmit')\n        }\n    },\n    pbmcancle: {\n        onClick: () => {\n            console.log('pbmcancle')\n        }\n    },\n    pbmapprove: {\n        onClick: () => {\n            console.log('pbmapprove')\n        }\n    },\n    printpreview: {\n        onClick: () => {\n            console.log('printpreview')\n        }\n    },\n    printdesign: {\n        onClick: () => {\n            console.log('printdesign')\n        }\n    },\n    upload: {\n        onClick: () => {\n            console.log('upload')\n        }\n    },\n    addRow: {\n        onClick: () => {\n            console.log('addRow')\n        }\n    },\n    delRow: {\n        onClick: () => {\n            console.log('delRow')\n        }\n    },\n    copyRow: {\n        onClick: () => {\n            console.log('copyRow')\n        }\n    },\n    copyToEnd: {\n        onClick: () => {\n            console.log('copyToEnd')\n        }\n    },\n    max: {\n        onClick: () => {\n            console.log('max')\n        }\n    },\n}\n\nclass Demo1 extends Component {\n\n    render() {\n        return <Btns isBtn={false} btns = {btns} powerBtns={powerBtns}/>\n    }\n}\n", "desc": " isBtn={false} " }, { "example": _react2['default'].createElement(Demo3, null), "title": " 使用按钮权限", "code": "/**\n *\n * @title 使用按钮权限\n * @description 传入 powerBtns，最终显示按钮是 pwoerBtns和btn说的交集\n *\n */\nimport React, { Component } from 'react';\nimport  Btns  from 'ac-btns';\n\n\nlet powerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',\n                'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',\n                'printpreview']\n\nlet btns = {\n    add: {\n        onClick: () => {\n            console.log('add')\n        }\n    },\n    search: {\n        onClick: () => {\n            console.log('search')\n        }\n    },\n    clear: {\n        onClick: () => {\n            console.log('clear')\n        }\n    },\n    export: {\n        onClick: () => {\n            console.log('export')\n        }\n    },\n    save: {\n        onClick: () => {\n            console.log('save')\n        }\n    },\n    cancel: {\n        onClick: () => {\n            console.log('cancel')\n        }\n    },\n    update: {\n        onClick: () => {\n            console.log('update')\n        }\n    },\n    delete: {\n        onClick: () => {\n            console.log('delete')\n        }\n    },\n    pbmsubmit: {\n        onClick: () => {\n            console.log('pbmsubmit')\n        }\n    },\n    pbmcancle: {\n        onClick: () => {\n            console.log('pbmcancle')\n        }\n    },\n    pbmapprove: {\n        onClick: () => {\n            console.log('pbmapprove')\n        }\n    },\n    printpreview: {\n        onClick: () => {\n            console.log('printpreview')\n        }\n    },\n    printdesign: {\n        onClick: () => {\n            console.log('printdesign')\n        }\n    },\n    upload: {\n        onClick: () => {\n            console.log('upload')\n        }\n    },\n    addRow: {\n        onClick: () => {\n            console.log('addRow')\n        }\n    },\n    delRow: {\n        onClick: () => {\n            console.log('delRow')\n        }\n    },\n    copyRow: {\n        onClick: () => {\n            console.log('copyRow')\n        }\n    },\n    copyToEnd: {\n        onClick: () => {\n            console.log('copyToEnd')\n        }\n    },\n    max: {\n        onClick: () => {\n            console.log('max')\n        }\n    },\n}\n\nclass Demo1 extends Component {\n\n    render() {\n        return <Btns btns = {btns} powerBtns={powerBtns}/>\n    }\n}\n", "desc": " 传入 powerBtns，最终显示按钮是 pwoerBtns和btn说的交集" }];
+	var Demo1 = __webpack_require__(268);var Demo2 = __webpack_require__(272);var Demo3 = __webpack_require__(273);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 基本使用", "code": "/**\n *\n * @title 基本使用\n * @description 基本使用\n *\n */\nimport React, { Component } from 'react';\nimport  Btns, Button  from 'ac-btns';\n\n\nlet btns = {\n    add: {\n        onClick: () => {\n            console.log('add')\n        }\n    },\n    other:<Button colors='primary' className=\"ac-btns-item \">我是自定义按钮</Button>,\n    clear: {\n        onClick: () => {\n            console.log('clear')\n        }\n    },\n    export: {\n        onClick: () => {\n            console.log('export')\n        }\n    },\n    save: {\n        onClick: () => {\n            console.log('save')\n        }\n    },\n    cancel: {\n        onClick: () => {\n            console.log('cancel')\n        }\n    },\n    update: {\n        onClick: () => {\n            console.log('update')\n        }\n    },\n    delete: {\n        onClick: () => {\n            console.log('delete')\n        }\n    },\n    pbmsubmit: {\n        onClick: () => {\n            console.log('pbmsubmit')\n        }\n    },\n    pbmcancle: {\n        onClick: () => {\n            console.log('pbmcancle')\n        }\n    },\n    pbmapprove: {\n        onClick: () => {\n            console.log('pbmapprove')\n        }\n    },\n    printpreview: {\n        onClick: () => {\n            console.log('printpreview')\n        }\n    },\n    printdesign: {\n        onClick: () => {\n            console.log('printdesign')\n        }\n    },\n    upload: {\n        onClick: () => {\n            console.log('upload')\n        }\n    },\n    addRow: {\n        onClick: () => {\n            console.log('addRow')\n        }\n    },\n    delRow: {\n        onClick: () => {\n            console.log('delRow')\n        }\n    },\n    copyRow: {\n        onClick: () => {\n            console.log('copyRow')\n        }\n    },\n    copyToEnd: {\n        onClick: () => {\n            console.log('copyToEnd')\n        }\n    },\n    max: {\n        onClick: () => {\n            console.log('max')\n        }\n    },\n}\nclass Demo1 extends Component {\n\n    render() {\n        return <Btns btns = {btns} />\n    }\n}\n", "desc": " 基本使用" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 不使用 Button 按钮", "code": "/**\n *\n * @title 不使用 Button 按钮\n * @description isBtn={false} \n *\n */\nimport React, { Component } from 'react';\nimport  Btns  from 'ac-btns';\n\n\nlet powerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',\n                'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',\n                'printpreview', 'printdesign', 'upload','addRow','delRow','copyRow',\n                'max','copyToEnd']\n\nlet btns = {\n    add: {\n        onClick: () => {\n            console.log('add')\n        }\n    },\n    search: {\n        onClick: () => {\n            console.log('search')\n        }\n    },\n    clear: {\n        onClick: () => {\n            console.log('clear')\n        }\n    },\n    export: {\n        onClick: () => {\n            console.log('export')\n        }\n    },\n    save: {\n        onClick: () => {\n            console.log('save')\n        }\n    },\n    cancel: {\n        onClick: () => {\n            console.log('cancel')\n        }\n    },\n    update: {\n        onClick: () => {\n            console.log('update')\n        }\n    },\n    delete: {\n        onClick: () => {\n            console.log('delete')\n        }\n    },\n    pbmsubmit: {\n        onClick: () => {\n            console.log('pbmsubmit')\n        }\n    },\n    pbmcancle: {\n        onClick: () => {\n            console.log('pbmcancle')\n        }\n    },\n    pbmapprove: {\n        onClick: () => {\n            console.log('pbmapprove')\n        }\n    },\n    printpreview: {\n        onClick: () => {\n            console.log('printpreview')\n        }\n    },\n    printdesign: {\n        onClick: () => {\n            console.log('printdesign')\n        }\n    },\n    upload: {\n        onClick: () => {\n            console.log('upload')\n        }\n    },\n    addRow: {\n        onClick: () => {\n            console.log('addRow')\n        }\n    },\n    delRow: {\n        onClick: () => {\n            console.log('delRow')\n        }\n    },\n    copyRow: {\n        onClick: () => {\n            console.log('copyRow')\n        }\n    },\n    copyToEnd: {\n        onClick: () => {\n            console.log('copyToEnd')\n        }\n    },\n    max: {\n        onClick: () => {\n            console.log('max')\n        }\n    },\n}\n\nclass Demo1 extends Component {\n\n    render() {\n        return <Btns isBtn={false} btns = {btns} powerBtns={powerBtns}/>\n    }\n}\n", "desc": " isBtn={false} " }, { "example": _react2['default'].createElement(Demo3, null), "title": " 使用按钮权限", "code": "/**\n *\n * @title 使用按钮权限\n * @description 传入 powerBtns，最终显示按钮是 pwoerBtns和btn说的交集\n *\n */\nimport React, { Component } from 'react';\nimport  Btns  from 'ac-btns';\n\n\nlet powerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',\n                'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',\n                'printpreview']\n\nlet btns = {\n    add: {\n        onClick: () => {\n            console.log('add')\n        }\n    },\n    search: {\n        onClick: () => {\n            console.log('search')\n        }\n    },\n    clear: {\n        onClick: () => {\n            console.log('clear')\n        }\n    },\n    export: {\n        onClick: () => {\n            console.log('export')\n        }\n    },\n    save: {\n        onClick: () => {\n            console.log('save')\n        }\n    },\n    cancel: {\n        onClick: () => {\n            console.log('cancel')\n        }\n    },\n    update: {\n        onClick: () => {\n            console.log('update')\n        }\n    },\n    delete: {\n        onClick: () => {\n            console.log('delete')\n        }\n    },\n    pbmsubmit: {\n        onClick: () => {\n            console.log('pbmsubmit')\n        }\n    },\n    pbmcancle: {\n        onClick: () => {\n            console.log('pbmcancle')\n        }\n    },\n    pbmapprove: {\n        onClick: () => {\n            console.log('pbmapprove')\n        }\n    },\n    printpreview: {\n        onClick: () => {\n            console.log('printpreview')\n        }\n    },\n    printdesign: {\n        onClick: () => {\n            console.log('printdesign')\n        }\n    },\n    upload: {\n        onClick: () => {\n            console.log('upload')\n        }\n    },\n    addRow: {\n        onClick: () => {\n            console.log('addRow')\n        }\n    },\n    delRow: {\n        onClick: () => {\n            console.log('delRow')\n        }\n    },\n    copyRow: {\n        onClick: () => {\n            console.log('copyRow')\n        }\n    },\n    copyToEnd: {\n        onClick: () => {\n            console.log('copyToEnd')\n        }\n    },\n    max: {\n        onClick: () => {\n            console.log('max')\n        }\n    },\n}\n\nclass Demo1 extends Component {\n\n    render() {\n        return <Btns btns = {btns} powerBtns={powerBtns}/>\n    }\n}\n", "desc": " 传入 powerBtns，最终显示按钮是 pwoerBtns和btn说的交集" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -36908,6 +36908,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _beeButton = __webpack_require__(264);
+	
+	var _beeButton2 = _interopRequireDefault(_beeButton);
+	
 	var _src = __webpack_require__(269);
 	
 	var _src2 = _interopRequireDefault(_src);
@@ -36934,11 +36938,11 @@
 	            console.log('add');
 	        }
 	    },
-	    search: {
-	        onClick: function onClick() {
-	            console.log('search');
-	        }
-	    },
+	    other: _react2['default'].createElement(
+	        _beeButton2['default'],
+	        { colors: 'primary', className: 'ac-btns-item ' },
+	        '\u6211\u662F\u81EA\u5B9A\u4E49\u6309\u94AE'
+	    ),
 	    clear: {
 	        onClick: function onClick() {
 	            console.log('clear');
@@ -37107,7 +37111,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 	
 	// 默认权限按钮数组是全部
-	var defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel', 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove', 'printpreview', 'printdesign', 'upload', 'addRow', 'delRow', 'copyRow', 'max', 'copyToEnd'];
+	var defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel', 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove', 'printpreview', 'printdesign', 'upload', 'addRow', 'delRow', 'copyRow', 'max', 'copyToEnd', 'other'];
 	
 	var propTypes = {
 	    powerBtns: _propTypes2['default'].array, // 按钮权限 code数组
@@ -37134,12 +37138,15 @@
 	
 	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.renderBtns = function () {
 	            var btnArray = [];
-	            _this.props.powerBtns.forEach(function (item) {
-	                var btn = _this.renderBtn(item);
-	                if (btn) btnArray.push(btn);
+	            Object.keys(_this.props.btns).map(function (item) {
+	                if (_this.props.powerBtns.indexOf(item) != -1) {
+	                    var btn = _this.renderBtn(item);
+	                    if (btn) btnArray.push(btn);
+	                }
 	            });
 	            return btnArray;
 	        }, _this.renderBtn = function (key) {
+	            if (!_this.props.btns.hasOwnProperty(key)) return;
 	            var itemProps = _this.props.btns[key];
 	            var _BtnsJSON$key = _btnJSON2['default'][key],
 	                colors = _BtnsJSON$key.colors,
@@ -37149,7 +37156,7 @@
 	                name_en_us = _BtnsJSON$key.name_en_us;
 	
 	            var clss = 'ac-btns-item ' + className;
-	            if (itemProps.className) clss += ' ' + itemProps.className;
+	            if (itemProps && itemProps.className) clss += ' ' + itemProps.className;
 	            if (_btnJSON2['default'][key]) {
 	                if (_this.props.isBtn) {
 	                    switch (key) {
@@ -37171,6 +37178,8 @@
 	                                _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
 	                                _react2['default'].createElement(_beeIcon2['default'], { type: 'uf-maxmize' })
 	                            );
+	                        case 'other':
+	                            return itemProps;
 	                        default:
 	                            return _react2['default'].createElement(
 	                                _beeButton2['default'],
@@ -37213,7 +37222,6 @@
 	    }
 	
 	    Btns.prototype.render = function render() {
-	        console.log(this.props.btns);
 	        return _react2['default'].createElement(
 	            'span',
 	            { className: 'ac-btns' },
@@ -37351,6 +37359,8 @@
 	    'colors': 'write',
 	    'name': '粘贴至末行',
 	    'className': 'ac-btns-copyToEnd'
+	}), _defineProperty(_add$search$clear$exp, 'other', {//其它自定义按钮
+	
 	}), _add$search$clear$exp);
 	module.exports = exports['default'];
 

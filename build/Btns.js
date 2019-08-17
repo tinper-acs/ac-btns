@@ -37,7 +37,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
 // 默认权限按钮数组是全部
-var defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel', 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove', 'printpreview', 'printdesign', 'upload', 'addRow', 'delRow', 'copyRow', 'max', 'copyToEnd'];
+var defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel', 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove', 'printpreview', 'printdesign', 'upload', 'addRow', 'delRow', 'copyRow', 'max', 'copyToEnd', 'other'];
 
 var propTypes = {
     powerBtns: _propTypes2["default"].array, // 按钮权限 code数组
@@ -64,12 +64,15 @@ var Btns = function (_Component) {
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.renderBtns = function () {
             var btnArray = [];
-            _this.props.powerBtns.forEach(function (item) {
-                var btn = _this.renderBtn(item);
-                if (btn) btnArray.push(btn);
+            Object.keys(_this.props.btns).map(function (item) {
+                if (_this.props.powerBtns.indexOf(item) != -1) {
+                    var btn = _this.renderBtn(item);
+                    if (btn) btnArray.push(btn);
+                }
             });
             return btnArray;
         }, _this.renderBtn = function (key) {
+            if (!_this.props.btns.hasOwnProperty(key)) return;
             var itemProps = _this.props.btns[key];
             var _BtnsJSON$key = _btnJSON2["default"][key],
                 colors = _BtnsJSON$key.colors,
@@ -79,7 +82,7 @@ var Btns = function (_Component) {
                 name_en_us = _BtnsJSON$key.name_en_us;
 
             var clss = 'ac-btns-item ' + className;
-            if (itemProps.className) clss += ' ' + itemProps.className;
+            if (itemProps && itemProps.className) clss += ' ' + itemProps.className;
             if (_btnJSON2["default"][key]) {
                 if (_this.props.isBtn) {
                     switch (key) {
@@ -101,6 +104,8 @@ var Btns = function (_Component) {
                                 _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
                                 _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-maxmize' })
                             );
+                        case 'other':
+                            return itemProps;
                         default:
                             return _react2["default"].createElement(
                                 _beeButton2["default"],
@@ -143,7 +148,6 @@ var Btns = function (_Component) {
     }
 
     Btns.prototype.render = function render() {
-        console.log(this.props.btns);
         return _react2["default"].createElement(
             'span',
             { className: 'ac-btns' },

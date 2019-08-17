@@ -5,6 +5,7 @@
  *
  */
 import React, { Component } from 'react';
+import Button from 'bee-button'
 import Btns from '../../src'
 
 
@@ -14,11 +15,7 @@ let btns = {
             console.log('add')
         }
     },
-    search: {
-        onClick: () => {
-            console.log('search')
-        }
-    },
+    other:<Button colors='primary' className="ac-btns-item ">我是自定义按钮</Button>,
     clear: {
         onClick: () => {
             console.log('clear')
@@ -105,7 +102,6 @@ let btns = {
         }
     },
 }
-
 class Demo1 extends Component {
 
     render() {

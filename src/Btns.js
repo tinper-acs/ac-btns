@@ -9,7 +9,7 @@ import Icon from 'bee-icon';
 let defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',
 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',
 'printpreview', 'printdesign', 'upload','addRow','delRow','copyRow',
-'max','copyToEnd']
+'max','copyToEnd','other']
 
 
 const propTypes = {
@@ -30,18 +30,21 @@ class Btns extends Component {
 
     renderBtns=()=>{
         let btnArray = [];
-        this.props.powerBtns.forEach(item => {
-            let btn = this.renderBtn(item)
-            if(btn)btnArray.push(btn)
-        });
+        Object.keys(this.props.btns).map(item=>{
+            if(this.props.powerBtns.indexOf(item)!=-1){
+                let btn = this.renderBtn(item)
+                if(btn)btnArray.push(btn)
+            }
+        })
         return btnArray;
     }
 
     renderBtn=(key)=>{
+        if(!this.props.btns.hasOwnProperty(key))return;
         let itemProps = this.props.btns[key];
         let { colors,className,name,name_zh_tw,name_en_us} = BtnsJSON[key];
         let clss = 'ac-btns-item '+className;
-        if(itemProps.className)clss+=' '+itemProps.className;
+        if(itemProps&&itemProps.className)clss+=' '+itemProps.className;
         if(BtnsJSON[key]){
             if(this.props.isBtn){
                 switch(key){
@@ -57,6 +60,8 @@ class Btns extends Component {
                         return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
                                     <Icon type='uf-maxmize'/>
                                 </Button>
+                    case 'other':
+                        return itemProps
                     default:
                         return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>{name}</Button>
                 }
@@ -86,7 +91,6 @@ class Btns extends Component {
     }
 
     render(){
-        console.log(this.props.btns)
         return(
             <span className='ac-btns'>
                 {this.renderBtns()}

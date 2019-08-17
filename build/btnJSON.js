@@ -114,5 +114,7 @@ exports["default"] = (_add$search$clear$exp = {
     'colors': 'write',
     'name': '粘贴至末行',
     'className': 'ac-btns-copyToEnd'
+}), _defineProperty(_add$search$clear$exp, 'other', {//其它自定义按钮
+
 }), _add$search$clear$exp);
 module.exports = exports['default'];

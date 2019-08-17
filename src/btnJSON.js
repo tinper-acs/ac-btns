@@ -112,5 +112,8 @@ export default {
         'name':'粘贴至末行',
         'className':'ac-btns-copyToEnd'
     },
+    'other':{//其它自定义按钮
+
+    }
 }
 
