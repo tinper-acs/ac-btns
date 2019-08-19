@@ -19,6 +19,7 @@
 |参数|说明|类型|默认值|
 |:---|:-----|:----|:------|
 |powerBtns|按钮权限数组，包含所有可用按钮的code，不使用按钮权限可不传|array|-|
+|forcePowerBtns|不受按钮权限控制的code数组|array|-|
 |btns|按钮对象数组，详见demo3，支持按钮及code已全部列出|Object|-|
 |type|渲染组件是 `Button` 还是 `span`, `button`/`line`二选一，`line` 多用于table的操作列 |string|button|
 
