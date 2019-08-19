@@ -74,12 +74,11 @@ class Btns extends Component {
         let itemProps = this.props.btns[key];
         let { colors,className,name,name_zh_tw,name_en_us} = BtnsJSON[key];
         let clss = 'ac-btns-item '+className;
-        if(itemProps&&itemProps.className){
-            clss+=' '+itemProps.className;
+        if(itemProps){
+            if(itemProps.className)clss+=' '+itemProps.className;
             if(itemProps.name)name=itemProps.name
         }
         if(BtnsJSON[key]){
-            if(key=='print')console.log(itemProps)
             if(itemProps&&itemProps.node){
                 return itemProps.node
             }else{

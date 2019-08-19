@@ -133,12 +133,11 @@ var Btns = function (_Component) {
                 name_en_us = _BtnsJSON$key.name_en_us;
 
             var clss = 'ac-btns-item ' + className;
-            if (itemProps && itemProps.className) {
-                clss += ' ' + itemProps.className;
+            if (itemProps) {
+                if (itemProps.className) clss += ' ' + itemProps.className;
                 if (itemProps.name) name = itemProps.name;
             }
             if (_btnJSON2["default"][key]) {
-                if (key == 'print') console.log(itemProps);
                 if (itemProps && itemProps.node) {
                     return itemProps.node;
                 } else {
