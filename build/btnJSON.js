@@ -47,9 +47,9 @@ exports["default"] = (_add$search$clear$exp = {
         'hotkey': '',
         'className': 'ac-btns-cancel'
     },
-    'update': { //编辑
+    'update': { //修改
         'colors': 'write',
-        'name': '编辑',
+        'name': '修改',
         'hotkey': '',
         'className': 'ac-btns-update'
     },
@@ -110,6 +110,10 @@ exports["default"] = (_add$search$clear$exp = {
     'colors': 'write',
     'name': 'max',
     'className': 'ac-btns-max'
+}), _defineProperty(_add$search$clear$exp, 'min', { //最小化
+    'colors': 'write',
+    'name': 'min',
+    'className': 'ac-btns-min'
 }), _defineProperty(_add$search$clear$exp, 'copyToEnd', { //粘贴至末行
     'colors': 'write',
     'name': '粘贴至末行',

@@ -101,6 +101,11 @@ let btns = {
             console.log('max')
         }
     },
+    min: {
+        onClick: () => {
+            console.log('min')
+        }
+    },
 }
 class Demo1 extends Component {
 

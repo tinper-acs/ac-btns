@@ -3,24 +3,29 @@ import PropTypes from 'prop-types';
 import BtnsJSON from './btnJSON';
 import Button from 'bee-button';
 import Icon from 'bee-icon';
+import Dropdown from 'bee-dropdown';
+import Menus from 'bee-menus'
 
+const Item = Menus.Item;
 
 // 默认权限按钮数组是全部
 let defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',
 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',
 'printpreview', 'printdesign', 'upload','addRow','delRow','copyRow',
-'max','copyToEnd','other']
+'max','copyToEnd','other','min']
 
 
 const propTypes = {
     powerBtns:PropTypes.array,// 按钮权限 code数组
     btns:PropTypes.object,// 按钮对象数组
-    isBtn:PropTypes.bool,//是否是按钮
+    type:PropTypes.oneOfType(['button','line']),
+    maxSize:PropTypes.number
 };
 const defaultProps = {
     powerBtns:defaultPowerBtns,
     btns:{},
-    isBtn:true
+    type:'button',
+    maxSize:2
 };
 
 
@@ -29,14 +34,39 @@ class Btns extends Component {
 
 
     renderBtns=()=>{
+        let { btns, type, maxSize, powerBtns } = this.props;
         let btnArray = [];
-        Object.keys(this.props.btns).map(item=>{
-            if(this.props.powerBtns.indexOf(item)!=-1){
+        Object.keys(btns).map(item=>{
+            if(powerBtns.indexOf(item)!=-1){
                 let btn = this.renderBtn(item)
                 if(btn)btnArray.push(btn)
             }
         })
-        return btnArray;
+        if(type=='line'){
+            if(btnArray.length>maxSize){
+                let menusList = (<Menus>
+                        {
+                            btnArray.map((item,index)=>{
+                                if(index>maxSize-1)return <Item key={index} onClick={item.onClick}>{item}</Item>
+                            })
+                        }
+                    </Menus>)
+                let drop = (<Dropdown 
+                        overlayClassName='ac-btns-dropdown'
+                        trigger={['click']}
+                        overlay={menusList}
+                        animation="slide-up">
+                        <span className='ac-btns-item ac-btns-more'>更多</span>
+                    </Dropdown>)
+                btnArray.splice(maxSize,btnArray.length-maxSize+1,drop)
+                return btnArray;
+            }else{
+                return btnArray;
+            }
+        }else{
+            return btnArray;
+        }
+        
     }
 
     renderBtn=(key)=>{
@@ -46,7 +76,7 @@ class Btns extends Component {
         let clss = 'ac-btns-item '+className;
         if(itemProps&&itemProps.className)clss+=' '+itemProps.className;
         if(BtnsJSON[key]){
-            if(this.props.isBtn){
+            if(this.props.type=='button'){
                 switch(key){
                     case 'search':
                         return <Button key={key} {...itemProps} colors={colors} className={clss}>
@@ -59,6 +89,10 @@ class Btns extends Component {
                     case 'max':
                         return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
                                     <Icon type='uf-maxmize'/>
+                                </Button>
+                    case 'min':
+                        return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                                    <Icon type='uf-minimize'/>
                                 </Button>
                     case 'other':
                         return itemProps

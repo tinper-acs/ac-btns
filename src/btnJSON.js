@@ -37,9 +37,9 @@ export default {
         'hotkey':'',
         'className':'ac-btns-cancel'
     },
-    'update':{//编辑
+    'update':{//修改
         'colors':'write',
-        'name':'编辑',
+        'name':'修改',
         'hotkey':'',
         'className':'ac-btns-update'
     },
@@ -106,6 +106,11 @@ export default {
         'colors':'write',
         'name':'max',
         'className':'ac-btns-max'
+    },
+    'min':{//最小化
+        'colors':'write',
+        'name':'min',
+        'className':'ac-btns-min'
     },
     'copyToEnd':{//粘贴至末行
         'colors':'write',

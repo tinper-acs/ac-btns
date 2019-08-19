@@ -26,6 +26,14 @@ var _beeIcon = require('bee-icon');
 
 var _beeIcon2 = _interopRequireDefault(_beeIcon);
 
+var _beeDropdown = require('bee-dropdown');
+
+var _beeDropdown2 = _interopRequireDefault(_beeDropdown);
+
+var _beeMenus = require('bee-menus');
+
+var _beeMenus2 = _interopRequireDefault(_beeMenus);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -36,18 +44,22 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
+var Item = _beeMenus2["default"].Item;
+
 // 默认权限按钮数组是全部
-var defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel', 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove', 'printpreview', 'printdesign', 'upload', 'addRow', 'delRow', 'copyRow', 'max', 'copyToEnd', 'other'];
+var defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel', 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove', 'printpreview', 'printdesign', 'upload', 'addRow', 'delRow', 'copyRow', 'max', 'copyToEnd', 'other', 'min'];
 
 var propTypes = {
     powerBtns: _propTypes2["default"].array, // 按钮权限 code数组
     btns: _propTypes2["default"].object, // 按钮对象数组
-    isBtn: _propTypes2["default"].bool //是否是按钮
+    type: _propTypes2["default"].oneOfType(['button', 'line']),
+    maxSize: _propTypes2["default"].number
 };
 var defaultProps = {
     powerBtns: defaultPowerBtns,
     btns: {},
-    isBtn: true
+    type: 'button',
+    maxSize: 2
 };
 
 var Btns = function (_Component) {
@@ -63,14 +75,53 @@ var Btns = function (_Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.renderBtns = function () {
+            var _this$props = _this.props,
+                btns = _this$props.btns,
+                type = _this$props.type,
+                maxSize = _this$props.maxSize,
+                powerBtns = _this$props.powerBtns;
+
             var btnArray = [];
-            Object.keys(_this.props.btns).map(function (item) {
-                if (_this.props.powerBtns.indexOf(item) != -1) {
+            Object.keys(btns).map(function (item) {
+                if (powerBtns.indexOf(item) != -1) {
                     var btn = _this.renderBtn(item);
                     if (btn) btnArray.push(btn);
                 }
             });
-            return btnArray;
+            if (type == 'line') {
+                if (btnArray.length > maxSize) {
+                    var menusList = _react2["default"].createElement(
+                        _beeMenus2["default"],
+                        null,
+                        btnArray.map(function (item, index) {
+                            if (index > maxSize - 1) return _react2["default"].createElement(
+                                Item,
+                                { key: index, onClick: item.onClick },
+                                item
+                            );
+                        })
+                    );
+                    var drop = _react2["default"].createElement(
+                        _beeDropdown2["default"],
+                        {
+                            overlayClassName: 'ac-btns-dropdown',
+                            trigger: ['click'],
+                            overlay: menusList,
+                            animation: 'slide-up' },
+                        _react2["default"].createElement(
+                            'span',
+                            { className: 'ac-btns-item ac-btns-more' },
+                            '\u66F4\u591A'
+                        )
+                    );
+                    btnArray.splice(maxSize, btnArray.length - maxSize + 1, drop);
+                    return btnArray;
+                } else {
+                    return btnArray;
+                }
+            } else {
+                return btnArray;
+            }
         }, _this.renderBtn = function (key) {
             if (!_this.props.btns.hasOwnProperty(key)) return;
             var itemProps = _this.props.btns[key];
@@ -84,7 +135,7 @@ var Btns = function (_Component) {
             var clss = 'ac-btns-item ' + className;
             if (itemProps && itemProps.className) clss += ' ' + itemProps.className;
             if (_btnJSON2["default"][key]) {
-                if (_this.props.isBtn) {
+                if (_this.props.type == 'button') {
                     switch (key) {
                         case 'search':
                             return _react2["default"].createElement(
@@ -103,6 +154,12 @@ var Btns = function (_Component) {
                                 _beeButton2["default"],
                                 _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
                                 _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-maxmize' })
+                            );
+                        case 'min':
+                            return _react2["default"].createElement(
+                                _beeButton2["default"],
+                                _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-minimize' })
                             );
                         case 'other':
                             return itemProps;

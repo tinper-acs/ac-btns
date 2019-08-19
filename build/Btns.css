@@ -42,3 +42,43 @@
     min-width: auto; }
     .ac-btns button.ac-btns-item.u-button.ac-btns-max .uf {
       font-size: 19px; }
+  .ac-btns button.ac-btns-item.u-button.ac-btns-min {
+    padding: 3px;
+    min-width: auto; }
+    .ac-btns button.ac-btns-item.u-button.ac-btns-min .uf {
+      font-size: 19px; }
+
+.u-button-group .ac-btns .u-button {
+  float: left;
+  min-width: 25px;
+  margin-right: 0; }
+
+.u-button-group .ac-btns .u-button:first-child {
+  margin-left: 0; }
+
+.u-button-group .ac-btns .u-button:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0; }
+
+.u-button-group .ac-btns .u-button:last-child:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0; }
+
+.u-button-group .ac-btns .u-button-border + .u-button-border,
+.u-button-group .ac-btns .u-button-border + .u-button-group,
+.u-button-group .ac-btns .u-button-group + .u-button-border,
+.u-button-group .ac-btns .u-button-group + .v-group {
+  margin-left: 1px; }
+
+.u-button-group .ac-btns .u-button + .u-button,
+.u-button-group .ac-btns .u-button + .u-button-group,
+.u-button-group .ac-btns .u-button-group + .u-button,
+.u-button-group .ac-btns .u-button-group + .v-group {
+  margin-left: -1px; }
+
+.ac-btns-dropdown .u-dropdown-menu > .u-dropdown-menu-item-selected {
+  color: #000;
+  background-color: #fff; }
+
+.ac-btns-dropdown .u-dropdown-menu > .u-dropdown-menu-item-selected:hover {
+  background-color: #ebecf0; }

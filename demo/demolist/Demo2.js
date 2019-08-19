@@ -114,7 +114,7 @@ let btns = {
 class Demo1 extends Component {
 
     render() {
-        return <Btns isBtn={false} btns = {btns} powerBtns={powerBtns}/>
+        return <Btns type='line' btns = {btns} powerBtns={powerBtns}/>
     }
 }
 export default Demo1
