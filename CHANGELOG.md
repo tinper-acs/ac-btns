@@ -1,3 +1,13 @@
+<a name="0.0.9"></a>
+## [0.0.9](https://github.com/tinper-bee/ac-btns/compare/v0.0.8...v0.0.9) (2019-08-19)
+
+
+### Features
+
+* **ac-btns:** forcePowerBtns不受权限控制数组 ([902fe20](https://github.com/tinper-bee/ac-btns/commit/902fe20))
+
+
+
 <a name="0.0.8"></a>
 ## [0.0.8](https://github.com/tinper-bee/ac-btns/compare/v0.0.7...v0.0.8) (2019-08-19)
 
