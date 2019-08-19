@@ -1,3 +1,13 @@
+<a name="0.0.5"></a>
+## [0.0.5](https://github.com/tinper-bee/ac-btns/compare/v0.0.4...v0.0.5) (2019-08-19)
+
+
+### Features
+
+* **ac-btns:** 支持table上的操作按钮 ([eca5131](https://github.com/tinper-bee/ac-btns/commit/eca5131))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/tinper-bee/ac-btns/compare/v0.0.3...v0.0.4) (2019-08-17)
 
