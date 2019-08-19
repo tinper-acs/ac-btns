@@ -53,13 +53,15 @@ var propTypes = {
     powerBtns: _propTypes2["default"].array, // 按钮权限 code数组
     btns: _propTypes2["default"].object, // 按钮对象数组
     type: _propTypes2["default"].oneOfType(['button', 'line']),
-    maxSize: _propTypes2["default"].number
+    maxSize: _propTypes2["default"].number,
+    forcePowerBtns: [] //不受权限控制的按钮code数组
 };
 var defaultProps = {
     powerBtns: defaultPowerBtns,
     btns: {},
     type: 'button',
-    maxSize: 2
+    maxSize: 2,
+    forcePowerBtns: ['cancel', 'search', 'clear'] //取消、查询、清空不受权限管理控制
 };
 
 var Btns = function (_Component) {
@@ -79,13 +81,18 @@ var Btns = function (_Component) {
                 btns = _this$props.btns,
                 type = _this$props.type,
                 maxSize = _this$props.maxSize,
-                powerBtns = _this$props.powerBtns;
+                powerBtns = _this$props.powerBtns,
+                forcePowerBtns = _this$props.forcePowerBtns;
 
             var btnArray = [];
             Object.keys(btns).map(function (item) {
-                if (powerBtns.indexOf(item) != -1) {
+                if (forcePowerBtns.indexOf(item) != -1) {
                     var btn = _this.renderBtn(item);
                     if (btn) btnArray.push(btn);
+                }
+                if (powerBtns.indexOf(item) != -1) {
+                    var _btn = _this.renderBtn(item);
+                    if (_btn) btnArray.push(_btn);
                 }
             });
             if (type == 'line') {

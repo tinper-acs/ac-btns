@@ -19,13 +19,15 @@ const propTypes = {
     powerBtns:PropTypes.array,// 按钮权限 code数组
     btns:PropTypes.object,// 按钮对象数组
     type:PropTypes.oneOfType(['button','line']),
-    maxSize:PropTypes.number
+    maxSize:PropTypes.number,
+    forcePowerBtns:[],//不受权限控制的按钮code数组
 };
 const defaultProps = {
     powerBtns:defaultPowerBtns,
     btns:{},
     type:'button',
-    maxSize:2
+    maxSize:2,
+    forcePowerBtns:['cancel','search','clear'],//取消、查询、清空不受权限管理控制
 };
 
 
@@ -34,9 +36,13 @@ class Btns extends Component {
 
 
     renderBtns=()=>{
-        let { btns, type, maxSize, powerBtns } = this.props;
+        let { btns, type, maxSize, powerBtns,forcePowerBtns } = this.props;
         let btnArray = [];
         Object.keys(btns).map(item=>{
+            if(forcePowerBtns.indexOf(item)!=-1){
+                let btn = this.renderBtn(item)
+                if(btn)btnArray.push(btn)
+            }
             if(powerBtns.indexOf(item)!=-1){
                 let btn = this.renderBtn(item)
                 if(btn)btnArray.push(btn)
