@@ -20,7 +20,17 @@
 |:---|:-----|:----|:------|
 |powerBtns|按钮权限数组，包含所有可用按钮的code，不使用按钮权限可不传|array|-|
 |btns|按钮对象数组，详见demo3，支持按钮及code已全部列出|Object|-|
-|isBtn|渲染出来的组件是否是按钮|bool|true|
+|type|渲染组件是 `Button` 还是 `span`, `button`/`line`二选一，`line` 多用于table的操作列 |string|button|
+
+
+
+### btns下的属性 
+
+|参数|说明|类型|默认值|
+|:---|:-----|:----|:------|
+|node|自定义渲染dom，不传，则使用默认|node|-|
+|name|自定义渲染name，不传，则使用默认|node|-|
+|className|类名|string|-|
 
 
 ### 已支持的按钮及code如下
@@ -74,10 +84,6 @@
     },
     'printpreview':{//打印预览
         'name':'打印预览',
-        'className':'ac-btns-printpreview'
-    },
-    'printpreview':{//打印设计
-        'name':'打印设计',
         'className':'ac-btns-printpreview'
     },
     'printdesign':{//打印设计
