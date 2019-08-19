@@ -133,69 +133,75 @@ var Btns = function (_Component) {
                 name_en_us = _BtnsJSON$key.name_en_us;
 
             var clss = 'ac-btns-item ' + className;
-            if (itemProps && itemProps.className) clss += ' ' + itemProps.className;
+            if (itemProps && itemProps.className) {
+                clss += ' ' + itemProps.className;
+                if (itemProps.name) name = itemProps.name;
+            }
             if (_btnJSON2["default"][key]) {
-                if (_this.props.type == 'button') {
-                    switch (key) {
-                        case 'search':
-                            return _react2["default"].createElement(
-                                _beeButton2["default"],
-                                _extends({ key: key }, itemProps, { colors: colors, className: clss }),
-                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
-                            );
-                        case 'clear':
-                            return _react2["default"].createElement(
-                                _beeButton2["default"],
-                                _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
-                            );
-                        case 'max':
-                            return _react2["default"].createElement(
-                                _beeButton2["default"],
-                                _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-maxmize' })
-                            );
-                        case 'min':
-                            return _react2["default"].createElement(
-                                _beeButton2["default"],
-                                _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-minimize' })
-                            );
-                        case 'other':
-                            return itemProps;
-                        default:
-                            return _react2["default"].createElement(
-                                _beeButton2["default"],
-                                _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                name
-                            );
-                    }
+                if (key == 'print') console.log(itemProps);
+                if (itemProps && itemProps.node) {
+                    return itemProps.node;
                 } else {
-                    switch (key) {
-                        case 'search':
-                            return _react2["default"].createElement(
-                                'span',
-                                _extends({ key: key }, itemProps, { colors: colors, className: clss }),
-                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
-                            );
-                        case 'clear':
-                            return _react2["default"].createElement(
-                                'span',
-                                _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
-                            );
-                        case 'max':
-                            return _react2["default"].createElement(
-                                'span',
-                                _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-maxmize' })
-                            );
-                        default:
-                            return _react2["default"].createElement(
-                                'span',
-                                _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                name
-                            );
+                    if (_this.props.type == 'button') {
+                        switch (key) {
+                            case 'search':
+                                return _react2["default"].createElement(
+                                    _beeButton2["default"],
+                                    _extends({ key: key }, itemProps, { colors: colors, className: clss }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
+                                );
+                            case 'clear':
+                                return _react2["default"].createElement(
+                                    _beeButton2["default"],
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
+                                );
+                            case 'max':
+                                return _react2["default"].createElement(
+                                    _beeButton2["default"],
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-maxmize' })
+                                );
+                            case 'min':
+                                return _react2["default"].createElement(
+                                    _beeButton2["default"],
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-minimize' })
+                                );
+                            default:
+                                return _react2["default"].createElement(
+                                    _beeButton2["default"],
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    name
+                                );
+                        }
+                    } else {
+                        switch (key) {
+                            case 'search':
+                                return _react2["default"].createElement(
+                                    'span',
+                                    _extends({ key: key }, itemProps, { colors: colors, className: clss }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
+                                );
+                            case 'clear':
+                                return _react2["default"].createElement(
+                                    'span',
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
+                                );
+                            case 'max':
+                                return _react2["default"].createElement(
+                                    'span',
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-maxmize' })
+                                );
+                            default:
+                                return _react2["default"].createElement(
+                                    'span',
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    name
+                                );
+                        }
                     }
                 }
             } else {

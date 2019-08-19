@@ -3,12 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _add$search$clear$exp;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-exports["default"] = (_add$search$clear$exp = {
+exports["default"] = {
     'add': { //新增
         'colors': 'primary',
         'name': '新增',
@@ -81,44 +76,49 @@ exports["default"] = (_add$search$clear$exp = {
         'colors': 'write',
         'name': '打印预览',
         'className': 'ac-btns-printpreview'
-    }
-}, _defineProperty(_add$search$clear$exp, 'printpreview', { //打印设计
-    'colors': 'write',
-    'name': '打印设计',
-    'className': 'ac-btns-printpreview'
-}), _defineProperty(_add$search$clear$exp, 'printdesign', { //打印设计
-    'colors': 'write',
-    'name': '打印设计',
-    'className': 'ac-btns-printdesign'
-}), _defineProperty(_add$search$clear$exp, 'upload', { //上传文件
-    'colors': 'write',
-    'name': '上传文件',
-    'className': 'ac-btns-upload'
-}), _defineProperty(_add$search$clear$exp, 'addRow', { //增行
-    'colors': 'write',
-    'name': '增行',
-    'className': 'ac-btns-addRow'
-}), _defineProperty(_add$search$clear$exp, 'delRow', { //删行
-    'colors': 'write',
-    'name': '删行',
-    'className': 'ac-btns-delRow'
-}), _defineProperty(_add$search$clear$exp, 'copyRow', { //复制行
-    'colors': 'write',
-    'name': '复制行',
-    'className': 'ac-btns-copyRow'
-}), _defineProperty(_add$search$clear$exp, 'max', { //最大化
-    'colors': 'write',
-    'name': 'max',
-    'className': 'ac-btns-max'
-}), _defineProperty(_add$search$clear$exp, 'min', { //最小化
-    'colors': 'write',
-    'name': 'min',
-    'className': 'ac-btns-min'
-}), _defineProperty(_add$search$clear$exp, 'copyToEnd', { //粘贴至末行
-    'colors': 'write',
-    'name': '粘贴至末行',
-    'className': 'ac-btns-copyToEnd'
-}), _defineProperty(_add$search$clear$exp, 'other', {//其它自定义按钮
+    },
+    'printdesign': { //打印设计
+        'colors': 'write',
+        'name': '打印设计',
+        'className': 'ac-btns-printdesign'
+    },
+    'upload': { //上传文件
+        'colors': 'write',
+        'name': '上传文件',
+        'className': 'ac-btns-upload'
+    },
+    'addRow': { //增行
+        'colors': 'write',
+        'name': '增行',
+        'className': 'ac-btns-addRow'
+    },
+    'delRow': { //删行
+        'colors': 'write',
+        'name': '删行',
+        'className': 'ac-btns-delRow'
+    },
+    'copyRow': { //复制行
+        'colors': 'write',
+        'name': '复制行',
+        'className': 'ac-btns-copyRow'
+    },
+    'max': { //最大化
+        'colors': 'write',
+        'name': 'max',
+        'className': 'ac-btns-max'
+    },
+    'min': { //最小化
+        'colors': 'write',
+        'name': 'min',
+        'className': 'ac-btns-min'
+    },
+    'copyToEnd': { //粘贴至末行
+        'colors': 'write',
+        'name': '粘贴至末行',
+        'className': 'ac-btns-copyToEnd'
+    },
+    'other': {//其它自定义按钮
 
-}), _add$search$clear$exp);
+    }
+};
 module.exports = exports['default'];

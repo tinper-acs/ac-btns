@@ -74,49 +74,56 @@ class Btns extends Component {
         let itemProps = this.props.btns[key];
         let { colors,className,name,name_zh_tw,name_en_us} = BtnsJSON[key];
         let clss = 'ac-btns-item '+className;
-        if(itemProps&&itemProps.className)clss+=' '+itemProps.className;
+        if(itemProps&&itemProps.className){
+            clss+=' '+itemProps.className;
+            if(itemProps.name)name=itemProps.name
+        }
         if(BtnsJSON[key]){
-            if(this.props.type=='button'){
-                switch(key){
-                    case 'search':
-                        return <Button key={key} {...itemProps} colors={colors} className={clss}>
-                                    <Icon type='uf-search-light-2'/>
-                                </Button>
-                    case 'clear':
-                        return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
-                                    <Icon type='uf-clean'/>
-                                </Button>
-                    case 'max':
-                        return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
-                                    <Icon type='uf-maxmize'/>
-                                </Button>
-                    case 'min':
-                        return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
-                                    <Icon type='uf-minimize'/>
-                                </Button>
-                    case 'other':
-                        return itemProps
-                    default:
-                        return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>{name}</Button>
-                }
+            if(key=='print')console.log(itemProps)
+            if(itemProps&&itemProps.node){
+                return itemProps.node
             }else{
-                switch(key){
-                    case 'search':
-                        return <span key={key} {...itemProps} colors={colors} className={clss}>
-                                    <Icon type='uf-search-light-2'/>
-                                </span>
-                    case 'clear':
-                        return <span key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
-                                    <Icon type='uf-clean'/>
-                                </span>
-                    case 'max':
-                        return <span key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
-                                    <Icon type='uf-maxmize'/>
-                                </span>
-                    default:
-                        return <span key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>{name}</span>
+                if(this.props.type=='button'){
+                    switch(key){
+                        case 'search':
+                            return <Button key={key} {...itemProps} colors={colors} className={clss}>
+                                        <Icon type='uf-search-light-2'/>
+                                    </Button>
+                        case 'clear':
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                                        <Icon type='uf-clean'/>
+                                    </Button>
+                        case 'max':
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                                        <Icon type='uf-maxmize'/>
+                                    </Button>
+                        case 'min':
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                                        <Icon type='uf-minimize'/>
+                                    </Button>
+                        default:
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>{name}</Button>
+                    }
+                }else{
+                    switch(key){
+                        case 'search':
+                            return <span key={key} {...itemProps} colors={colors} className={clss}>
+                                        <Icon type='uf-search-light-2'/>
+                                    </span>
+                        case 'clear':
+                            return <span key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                                        <Icon type='uf-clean'/>
+                                    </span>
+                        case 'max':
+                            return <span key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                                        <Icon type='uf-maxmize'/>
+                                    </span>
+                        default:
+                            return <span key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>{name}</span>
+                    }
                 }
             }
+            
             
         }else{
             return null 

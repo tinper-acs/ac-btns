@@ -72,11 +72,6 @@ export default {
         'name':'打印预览',
         'className':'ac-btns-printpreview'
     },
-    'printpreview':{//打印设计
-        'colors':'write',
-        'name':'打印设计',
-        'className':'ac-btns-printpreview'
-    },
     'printdesign':{//打印设计
         'colors':'write',
         'name':'打印设计',
