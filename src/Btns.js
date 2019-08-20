@@ -58,13 +58,14 @@ class Btns extends Component {
         if(getCookie(localeCookie)=='en_US')more='more';
         let btnArray = [];
         Object.keys(btns).map(item=>{
-            if(forcePowerBtns.indexOf(item)!=-1){
-                let btn = this.renderBtn(item)
-                if(btn)btnArray.push(btn)
-            }else if(powerBtns.indexOf(item)!=-1){
+            if((forcePowerBtns.indexOf(item)!=-1)||(powerBtns.indexOf(item)!=-1)){
                 let btn = this.renderBtn(item)
                 if(btn)btnArray.push(btn)
             }
+            // else if(powerBtns.indexOf(item)!=-1){
+            //     let btn = this.renderBtn(item)
+            //     if(btn)btnArray.push(btn)
+            // }
         })
         if(type=='line'){
             if(btnArray.length>maxSize){

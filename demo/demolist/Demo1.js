@@ -20,6 +20,11 @@ let btns = {
             console.log('search')
         }
     },
+    cancel:{
+        onClick: () => {
+            console.log('cancel')
+        }
+    },
     clear: {
         onClick: () => {
             console.log('clear')

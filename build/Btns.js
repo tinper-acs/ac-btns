@@ -110,13 +110,14 @@ var Btns = function (_Component) {
             if (getCookie(localeCookie) == 'en_US') more = 'more';
             var btnArray = [];
             Object.keys(btns).map(function (item) {
-                if (forcePowerBtns.indexOf(item) != -1) {
+                if (forcePowerBtns.indexOf(item) != -1 || powerBtns.indexOf(item) != -1) {
                     var btn = _this.renderBtn(item);
                     if (btn) btnArray.push(btn);
-                } else if (powerBtns.indexOf(item) != -1) {
-                    var _btn = _this.renderBtn(item);
-                    if (_btn) btnArray.push(_btn);
                 }
+                // else if(powerBtns.indexOf(item)!=-1){
+                //     let btn = this.renderBtn(item)
+                //     if(btn)btnArray.push(btn)
+                // }
             });
             if (type == 'line') {
                 if (btnArray.length > maxSize) {
