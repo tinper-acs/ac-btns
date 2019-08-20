@@ -5,6 +5,7 @@ import Button from 'bee-button';
 import Icon from 'bee-icon';
 import Dropdown from 'bee-dropdown';
 import Menus from 'bee-menus'
+import i18n from './i18n'
 
 const Item = Menus.Item;
 
@@ -52,7 +53,9 @@ class Btns extends Component {
 
 
     renderBtns=()=>{
-        let { btns, type, maxSize, powerBtns,forcePowerBtns } = this.props;
+        let { btns, type, maxSize, powerBtns,forcePowerBtns,localeCookie } = this.props;
+        let more='更多'
+        if(getCookie(localeCookie)=='en_US')more='more';
         let btnArray = [];
         Object.keys(btns).map(item=>{
             if(forcePowerBtns.indexOf(item)!=-1){
@@ -74,10 +77,10 @@ class Btns extends Component {
                     </Menus>)
                 let drop = (<Dropdown 
                         overlayClassName='ac-btns-dropdown'
-                        trigger={['click']}
+                        trigger={['hover']}
                         overlay={menusList}
                         animation="slide-up">
-                        <span className='ac-btns-item ac-btns-more'>更多</span>
+                        <span className='ac-btns-item ac-btns-more'>{more}</span>
                     </Dropdown>)
                 btnArray.splice(maxSize,btnArray.length-maxSize+1,drop)
                 return btnArray;

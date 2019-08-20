@@ -34,6 +34,10 @@ var _beeMenus = require('bee-menus');
 
 var _beeMenus2 = _interopRequireDefault(_beeMenus);
 
+var _i18n = require('./i18n');
+
+var _i18n2 = _interopRequireDefault(_i18n);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -99,8 +103,11 @@ var Btns = function (_Component) {
                 type = _this$props.type,
                 maxSize = _this$props.maxSize,
                 powerBtns = _this$props.powerBtns,
-                forcePowerBtns = _this$props.forcePowerBtns;
+                forcePowerBtns = _this$props.forcePowerBtns,
+                localeCookie = _this$props.localeCookie;
 
+            var more = '更多';
+            if (getCookie(localeCookie) == 'en_US') more = 'more';
             var btnArray = [];
             Object.keys(btns).map(function (item) {
                 if (forcePowerBtns.indexOf(item) != -1) {
@@ -128,13 +135,13 @@ var Btns = function (_Component) {
                         _beeDropdown2["default"],
                         {
                             overlayClassName: 'ac-btns-dropdown',
-                            trigger: ['click'],
+                            trigger: ['hover'],
                             overlay: menusList,
                             animation: 'slide-up' },
                         _react2["default"].createElement(
                             'span',
                             { className: 'ac-btns-item ac-btns-more' },
-                            '\u66F4\u591A'
+                            more
                         )
                     );
                     btnArray.splice(maxSize, btnArray.length - maxSize + 1, drop);
