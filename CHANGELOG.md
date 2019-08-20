@@ -1,3 +1,13 @@
+<a name="0.0.10"></a>
+## [0.0.10](https://github.com/tinper-bee/ac-btns/compare/v0.0.9...v0.0.10) (2019-08-20)
+
+
+### Features
+
+* **ac-btns:** 支持多语 ([a517e80](https://github.com/tinper-bee/ac-btns/commit/a517e80))
+
+
+
 <a name="0.0.9"></a>
 ## [0.0.9](https://github.com/tinper-bee/ac-btns/compare/v0.0.8...v0.0.9) (2019-08-19)
 
