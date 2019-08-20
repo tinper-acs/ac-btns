@@ -18,10 +18,12 @@
 
 |参数|说明|类型|默认值|
 |:---|:-----|:----|:------|
+|btns|按钮对象数组，详见demo3，支持按钮及code已全部列出|Object|-|
 |powerBtns|按钮权限数组，包含所有可用按钮的code，不使用按钮权限可不传|array|-|
 |forcePowerBtns|不受按钮权限控制的code数组|array|-|
-|btns|按钮对象数组，详见demo3，支持按钮及code已全部列出|Object|-|
 |type|渲染组件是 `Button` 还是 `span`, `button`/`line`二选一，`line` 多用于table的操作列 |string|button|
+|maxSize|渲染组件是 `span` 时, 超出几个按钮变为下拉|number|2|
+|localeCookie|获取多语cookie的key值|string|locale|
 
 
 
@@ -29,9 +31,10 @@
 
 |参数|说明|类型|默认值|
 |:---|:-----|:----|:------|
-|node|自定义渲染dom，不传，则使用默认|node|-|
-|name|自定义渲染name，不传，则使用默认|node|-|
 |className|类名|string|-|
+|name|自定义渲染name，不传，则使用默认|node|-|
+|node|自定义渲染dom，不传，则使用默认|node|-|
+
 
 
 ### 已支持的按钮及code如下

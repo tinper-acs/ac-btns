@@ -47,21 +47,38 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Item = _beeMenus2["default"].Item;
 
 // 默认权限按钮数组是全部
-var defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel', 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove', 'printpreview', 'printdesign', 'upload', 'addRow', 'delRow', 'copyRow', 'max', 'copyToEnd', 'other', 'min'];
+var defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel', 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove', 'printpreview', 'printdesign', 'upload', 'addRow', 'delRow', 'copyRow', 'max', 'copyToEnd', 'min'];
 
 var propTypes = {
     powerBtns: _propTypes2["default"].array, // 按钮权限 code数组
     btns: _propTypes2["default"].object, // 按钮对象数组
     type: _propTypes2["default"].oneOfType(['button', 'line']),
     maxSize: _propTypes2["default"].number,
-    forcePowerBtns: [] //不受权限控制的按钮code数组
+    forcePowerBtns: _propTypes2["default"].array, //不受权限控制的按钮code数组
+    localeCookie: _propTypes2["default"].string //当前语种的cookie key值
 };
 var defaultProps = {
     powerBtns: defaultPowerBtns,
     btns: {},
     type: 'button',
     maxSize: 2,
-    forcePowerBtns: ['cancel', 'search', 'clear'] //取消、查询、清空不受权限管理控制
+    forcePowerBtns: ['cancel', 'search', 'clear'], //取消、查询、清空不受权限管理控制
+    localeCookie: 'locale'
+};
+
+var getCookie = function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) == name + '=') {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
 };
 
 var Btns = function (_Component) {
@@ -89,8 +106,7 @@ var Btns = function (_Component) {
                 if (forcePowerBtns.indexOf(item) != -1) {
                     var btn = _this.renderBtn(item);
                     if (btn) btnArray.push(btn);
-                }
-                if (powerBtns.indexOf(item) != -1) {
+                } else if (powerBtns.indexOf(item) != -1) {
                     var _btn = _this.renderBtn(item);
                     if (_btn) btnArray.push(_btn);
                 }
@@ -135,15 +151,17 @@ var Btns = function (_Component) {
             var _BtnsJSON$key = _btnJSON2["default"][key],
                 colors = _BtnsJSON$key.colors,
                 className = _BtnsJSON$key.className,
-                name = _BtnsJSON$key.name,
-                name_zh_tw = _BtnsJSON$key.name_zh_tw,
-                name_en_us = _BtnsJSON$key.name_en_us;
+                name = _BtnsJSON$key.name_zh_CN,
+                name_zh_TW = _BtnsJSON$key.name_zh_TW,
+                name_en_US = _BtnsJSON$key.name_en_US;
 
             var clss = 'ac-btns-item ' + className;
             if (itemProps) {
                 if (itemProps.className) clss += ' ' + itemProps.className;
                 if (itemProps.name) name = itemProps.name;
             }
+            if (getCookie(_this.props.localeCookie) == 'zh_TW') name = name_zh_TW;
+            if (getCookie(_this.props.localeCookie) == 'en_US') name = name_en_US;
             if (_btnJSON2["default"][key]) {
                 if (itemProps && itemProps.node) {
                     return itemProps.node;

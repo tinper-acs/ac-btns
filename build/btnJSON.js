@@ -6,119 +6,154 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = {
     'add': { //新增
         'colors': 'primary',
-        'name': '新增',
-        'name_zh_tw': '繁体',
-        'name_en_us': '英文',
+        'name_zh_CN': '新增',
+        'name_zh_TW': '新增',
+        'name_en_US': 'New',
         'hotkey': 'alt+n',
         'className': 'ac-btns-add'
     },
     'search': { //查询
         'colors': 'primary',
-        'name': '查询',
+        'name_zh_CN': '查询',
+        'name_zh_TW': '查詢',
+        'name_en_US': 'Search',
         'hotkey': 'ctrl+enter',
         'className': 'ac-btns-search'
     },
     'clear': { //清空
         'colors': 'write',
-        'name': '清空',
+        'name_zh_CN': '清空',
+        'name_zh_TW': '清空',
+        'name_en_US': 'Clear',
         'hotkey': 'ctrl+r',
         'className': 'ac-btns-clear'
     },
     'export': { //导出
         'colors': 'write',
-        'name': '导出',
+        'name_zh_CN': '导出',
+        'name_zh_TW': '導出',
+        'name_en_US': 'Export',
         'hotkey': '',
         'className': 'ac-btns-export'
     },
     'save': { //保存
         'colors': 'primary',
-        'name': '保存',
+        'name_zh_CN': '保存',
+        'name_zh_TW': '保存',
+        'name_en_US': 'Save',
         'hotkey': '',
         'className': 'ac-btns-save'
     },
     'cancel': { //取消
         'colors': 'write',
-        'name': '取消',
+        'name_zh_CN': '取消',
+        'name_zh_TW': '取消',
+        'name_en_US': 'Cancel',
         'hotkey': '',
         'className': 'ac-btns-cancel'
     },
     'update': { //修改
         'colors': 'write',
-        'name': '修改',
+        'name_zh_CN': '修改',
+        'name_zh_TW': '修改',
+        'name_en_US': 'Modify',
         'hotkey': '',
         'className': 'ac-btns-update'
     },
     'delete': { //删除
         'colors': 'write',
-        'name': '删除',
+        'name_zh_CN': '删除',
+        'name_zh_TW': '刪除',
+        'name_en_US': 'Delete',
         'hotkey': '',
         'className': 'ac-btns-delete'
     },
     'pbmsubmit': { //提交
         'colors': 'write',
-        'name': '提交',
+        'name_zh_CN': '提交',
+        'name_zh_TW': '提交',
+        'name_en_US': 'Submit',
         'hotkey': '',
         'className': 'ac-btns-pbmsubmit'
     },
     'pbmcancle': { //撤回
         'colors': 'write',
-        'name': '撤回',
+        'name_zh_CN': '撤回',
+        'name_zh_TW': '撤回',
+        'name_en_US': 'Recall',
         'hotkey': '',
         'className': 'ac-btns-pbmcancle'
     },
     'pbmapprove': { //审批
         'colors': 'write',
-        'name': '审批',
+        'name_zh_CN': '审批',
+        'name_zh_TW': '審批',
+        'name_en_US': 'Approval',
         'hotkey': '',
         'className': 'ac-btns-pbmapprove'
     },
     'printpreview': { //打印预览
         'colors': 'write',
-        'name': '打印预览',
+        'name_zh_CN': '打印预览',
+        'name_zh_TW': '打印預覽',
+        'name_en_US': 'Print Preview',
         'className': 'ac-btns-printpreview'
     },
     'printdesign': { //打印设计
         'colors': 'write',
-        'name': '打印设计',
+        'name_zh_CN': '打印设计',
+        'name_zh_TW': '打印設計',
+        'name_en_US': 'Print Design',
         'className': 'ac-btns-printdesign'
     },
     'upload': { //上传文件
         'colors': 'write',
-        'name': '上传文件',
+        'name_zh_CN': '上传文件',
+        'name_zh_TW': '上傳文件',
+        'name_en_US': 'Upload files',
         'className': 'ac-btns-upload'
     },
     'addRow': { //增行
         'colors': 'write',
-        'name': '增行',
+        'name_zh_CN': '增行',
+        'name_zh_TW': '增行',
+        'name_en_US': 'New',
         'className': 'ac-btns-addRow'
     },
     'delRow': { //删行
         'colors': 'write',
-        'name': '删行',
+        'name_zh_CN': '删行',
+        'name_zh_TW': '刪行',
+        'name_en_US': 'Delete',
         'className': 'ac-btns-delRow'
     },
     'copyRow': { //复制行
         'colors': 'write',
-        'name': '复制行',
+        'name_zh_CN': '复制行',
+        'name_zh_TW': '複製行',
+        'name_en_US': 'Duplicate rows',
         'className': 'ac-btns-copyRow'
     },
     'max': { //最大化
         'colors': 'write',
-        'name': 'max',
+        'name_zh_CN': '最大化',
+        'name_zh_TW': '最大化',
+        'name_en_US': 'Maximize',
         'className': 'ac-btns-max'
     },
     'min': { //最小化
         'colors': 'write',
-        'name': 'min',
+        'name_zh_CN': 'min',
+        'name_zh_TW': '最小化',
+        'name_en_US': 'Minimize',
         'className': 'ac-btns-min'
     },
     'copyToEnd': { //粘贴至末行
         'colors': 'write',
-        'name': '粘贴至末行',
+        'name_zh_CN': '粘贴至末行',
+        'name_zh_TW': '粘貼至末行',
+        'name_en_US': 'Paste to end line',
         'className': 'ac-btns-copyToEnd'
-    },
-    'other': {//其它自定义按钮
-
     }
 };
 module.exports = exports['default'];

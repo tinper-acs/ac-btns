@@ -12,7 +12,7 @@ const Item = Menus.Item;
 let defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',
 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',
 'printpreview', 'printdesign', 'upload','addRow','delRow','copyRow',
-'max','copyToEnd','other','min']
+'max','copyToEnd','min']
 
 
 const propTypes = {
@@ -20,7 +20,8 @@ const propTypes = {
     btns:PropTypes.object,// 按钮对象数组
     type:PropTypes.oneOfType(['button','line']),
     maxSize:PropTypes.number,
-    forcePowerBtns:[],//不受权限控制的按钮code数组
+    forcePowerBtns:PropTypes.array,//不受权限控制的按钮code数组
+    localeCookie:PropTypes.string,//当前语种的cookie key值
 };
 const defaultProps = {
     powerBtns:defaultPowerBtns,
@@ -28,8 +29,23 @@ const defaultProps = {
     type:'button',
     maxSize:2,
     forcePowerBtns:['cancel','search','clear'],//取消、查询、清空不受权限管理控制
+    localeCookie:'locale'
 };
 
+const getCookie = (name) => {
+    let cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        let cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 
 
 class Btns extends Component {
@@ -42,8 +58,7 @@ class Btns extends Component {
             if(forcePowerBtns.indexOf(item)!=-1){
                 let btn = this.renderBtn(item)
                 if(btn)btnArray.push(btn)
-            }
-            if(powerBtns.indexOf(item)!=-1){
+            }else if(powerBtns.indexOf(item)!=-1){
                 let btn = this.renderBtn(item)
                 if(btn)btnArray.push(btn)
             }
@@ -78,12 +93,14 @@ class Btns extends Component {
     renderBtn=(key)=>{
         if(!this.props.btns.hasOwnProperty(key))return;
         let itemProps = this.props.btns[key];
-        let { colors,className,name,name_zh_tw,name_en_us} = BtnsJSON[key];
+        let { colors,className,name_zh_CN:name,name_zh_TW,name_en_US} = BtnsJSON[key];
         let clss = 'ac-btns-item '+className;
         if(itemProps){
             if(itemProps.className)clss+=' '+itemProps.className;
             if(itemProps.name)name=itemProps.name
         }
+        if(getCookie(this.props.localeCookie)=='zh_TW')name=name_zh_TW;
+        if(getCookie(this.props.localeCookie)=='en_US')name=name_en_US;
         if(BtnsJSON[key]){
             if(itemProps&&itemProps.node){
                 return itemProps.node

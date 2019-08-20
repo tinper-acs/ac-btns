@@ -15,7 +15,11 @@ let btns = {
             console.log('add')
         }
     },
-    other:<Button colors='primary' className="ac-btns-item ">我是自定义按钮</Button>,
+    search:{
+        onClick: () => {
+            console.log('search')
+        }
+    },
     clear: {
         onClick: () => {
             console.log('clear')
