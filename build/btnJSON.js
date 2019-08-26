@@ -106,12 +106,19 @@ exports["default"] = {
         'name_en_US': 'Print Design',
         'className': 'ac-btns-printdesign'
     },
-    'upload': { //上传文件
+    'upload': { //上传
         'colors': 'write',
-        'name_zh_CN': '上传文件',
-        'name_zh_TW': '上傳文件',
-        'name_en_US': 'Upload files',
+        'name_zh_CN': '上传',
+        'name_zh_TW': '上傳',
+        'name_en_US': 'Upload',
         'className': 'ac-btns-upload'
+    },
+    'download': { //下载
+        'colors': 'write',
+        'name_zh_CN': '下载',
+        'name_zh_TW': '下載',
+        'name_en_US': 'Download',
+        'className': 'ac-btns-download'
     },
     'addRow': { //增行
         'colors': 'write',
@@ -154,6 +161,27 @@ exports["default"] = {
         'name_zh_TW': '粘貼至末行',
         'name_en_US': 'Paste to end line',
         'className': 'ac-btns-copyToEnd'
+    },
+    'organizationChat': { //机构图
+        'colors': 'write',
+        'name_zh_CN': '机构图',
+        'name_zh_TW': '機構圖',
+        'name_en_US': 'Organization Chat',
+        'className': 'ac-btns-organizationChat'
+    },
+    'enable': { //启用
+        'colors': 'write',
+        'name_zh_CN': '启用',
+        'name_zh_TW': '啟用',
+        'name_en_US': 'Enable',
+        'className': 'ac-btns-enable'
+    },
+    'disabled': { //停用
+        'colors': 'write',
+        'name_zh_CN': '停用',
+        'name_zh_TW': '停用',
+        'name_en_US': 'Disabled',
+        'className': 'ac-btns-disabled'
     }
 };
 module.exports = exports['default'];

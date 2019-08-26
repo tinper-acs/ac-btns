@@ -115,6 +115,26 @@ let btns = {
             console.log('min')
         }
     },
+    organizationChat:{
+        onClick: () => {
+            console.log('organizationChat')
+        }
+    },
+    download:{
+        onClick: () => {
+            console.log('download')
+        }
+    },
+    enable:{
+        onClick: () => {
+            console.log('enable')
+        }
+    },
+    disabled:{
+        onClick: () => {
+            console.log('disabled')
+        }
+    },
 }
 class Demo1 extends Component {
 
