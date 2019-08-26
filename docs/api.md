@@ -24,8 +24,20 @@
 |type|渲染组件是 `Button` 还是 `span`, `button`/`line`二选一，`line` 多用于table的操作列 |string|button|
 |maxSize|渲染组件是 `span` 时, 超出几个按钮变为下拉|number|2|
 |localeCookie|获取多语cookie的key值|string|locale|
+|addToBtns|扩展的按钮,例如 `{'example':{ 'colors':'write','name_zh_CN':'测试按钮','name_zh_TW':'測試按鈕','name_en_US':'Test Button','className':'ac-btns-example'}}`
+|object|-|
 
 
+
+### copyToEnd
+
+|参数|说明|类型|默认值|
+|:---|:-----|:----|:------|
+|colors|按钮样式，参考(bee-button不同颜色的按钮)[http://bee.tinper.org/tinper-bee/bee-button#%E4%B8%8D%E5%90%8C%E9%A2%9C%E8%89%B2%E7%9A%84%E6%8C%89%E9%92%AE]|string|-|
+|name_zh_CN|中文简体内容|string|-|
+|name_zh_TW|中文繁体内容|string|-|
+|name_en_US|英文内容|string|-|
+|className|类名|string|-|
 
 ### btns下的属性 
 
@@ -34,6 +46,7 @@
 |className|类名|string|-|
 |name|自定义渲染name，不传，则使用默认|node|-|
 |node|自定义渲染dom，不传，则使用默认|node|-|
+
 
 
 

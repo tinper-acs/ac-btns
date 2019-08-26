@@ -34,9 +34,9 @@ var _beeMenus = require('bee-menus');
 
 var _beeMenus2 = _interopRequireDefault(_beeMenus);
 
-var _i18n = require('./i18n');
+var _lodash = require('lodash.isequal');
 
-var _i18n2 = _interopRequireDefault(_i18n);
+var _lodash2 = _interopRequireDefault(_lodash);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -50,10 +50,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var Item = _beeMenus2["default"].Item;
 
-// 默认权限按钮数组是全部
-var defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel', 'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove', 'printpreview', 'printdesign', 'upload', 'addRow', 'delRow', 'copyRow', 'max', 'copyToEnd', 'min'];
-
 var propTypes = {
+    addToBtns: _propTypes2["default"].object, //所有的按钮，支持扩展
     powerBtns: _propTypes2["default"].array, // 按钮权限 code数组
     btns: _propTypes2["default"].object, // 按钮对象数组
     type: _propTypes2["default"].oneOfType(['button', 'line']),
@@ -62,7 +60,7 @@ var propTypes = {
     localeCookie: _propTypes2["default"].string //当前语种的cookie key值
 };
 var defaultProps = {
-    powerBtns: defaultPowerBtns,
+    addToBtns: {},
     btns: {},
     type: 'button',
     maxSize: 2,
@@ -88,16 +86,12 @@ var getCookie = function getCookie(name) {
 var Btns = function (_Component) {
     _inherits(Btns, _Component);
 
-    function Btns() {
-        var _temp, _this, _ret;
-
+    function Btns(props) {
         _classCallCheck(this, Btns);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
+        var _this = _possibleConstructorReturn(this, _Component.call(this, props));
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.renderBtns = function () {
+        _this.renderBtns = function () {
             var _this$props = _this.props,
                 btns = _this$props.btns,
                 type = _this$props.type,
@@ -109,16 +103,20 @@ var Btns = function (_Component) {
             var more = '更多';
             if (getCookie(localeCookie) == 'en_US') more = 'more';
             var btnArray = [];
-            Object.keys(btns).map(function (item) {
-                if (forcePowerBtns.indexOf(item) != -1 || powerBtns.indexOf(item) != -1) {
+            if (powerBtns) {
+                Object.keys(btns).map(function (item) {
+                    if (forcePowerBtns.indexOf(item) != -1 || powerBtns.indexOf(item) != -1) {
+                        var btn = _this.renderBtn(item);
+                        if (btn) btnArray.push(btn);
+                    }
+                });
+            } else {
+                Object.keys(btns).map(function (item) {
                     var btn = _this.renderBtn(item);
                     if (btn) btnArray.push(btn);
-                }
-                // else if(powerBtns.indexOf(item)!=-1){
-                //     let btn = this.renderBtn(item)
-                //     if(btn)btnArray.push(btn)
-                // }
-            });
+                });
+            }
+
             if (type == 'line') {
                 if (btnArray.length > maxSize) {
                     var menusList = _react2["default"].createElement(
@@ -153,15 +151,17 @@ var Btns = function (_Component) {
             } else {
                 return btnArray;
             }
-        }, _this.renderBtn = function (key) {
+        };
+
+        _this.renderBtn = function (key) {
             if (!_this.props.btns.hasOwnProperty(key)) return;
             var itemProps = _this.props.btns[key];
-            var _BtnsJSON$key = _btnJSON2["default"][key],
-                colors = _BtnsJSON$key.colors,
-                className = _BtnsJSON$key.className,
-                name = _BtnsJSON$key.name_zh_CN,
-                name_zh_TW = _BtnsJSON$key.name_zh_TW,
-                name_en_US = _BtnsJSON$key.name_en_US;
+            var _this$state$allBtns$k = _this.state.allBtns[key],
+                colors = _this$state$allBtns$k.colors,
+                className = _this$state$allBtns$k.className,
+                name = _this$state$allBtns$k.name_zh_CN,
+                name_zh_TW = _this$state$allBtns$k.name_zh_TW,
+                name_en_US = _this$state$allBtns$k.name_en_US;
 
             var clss = 'ac-btns-item ' + className;
             if (itemProps) {
@@ -170,7 +170,7 @@ var Btns = function (_Component) {
             }
             if (getCookie(_this.props.localeCookie) == 'zh_TW') name = name_zh_TW;
             if (getCookie(_this.props.localeCookie) == 'en_US') name = name_en_US;
-            if (_btnJSON2["default"][key]) {
+            if (_this.state.allBtns[key]) {
                 if (itemProps && itemProps.node) {
                     return itemProps.node;
                 } else {
@@ -239,8 +239,23 @@ var Btns = function (_Component) {
             } else {
                 return null;
             }
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+        };
+
+        _this.state = {
+            allBtns: _extends(_btnJSON2["default"], _this.props.addToBtns)
+        };
+        return _this;
     }
+
+    Btns.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+        if ('addToBtns' in nextProps) {
+            if ((0, _lodash2["default"])(this.state.allBtns, _extends(_btnJSON2["default"], nextProps.addToBtns))) {
+                this.setState({
+                    allBtns: _extends(_btnJSON2["default"], nextProps.addToBtns)
+                });
+            }
+        }
+    };
 
     Btns.prototype.render = function render() {
         return _react2["default"].createElement(

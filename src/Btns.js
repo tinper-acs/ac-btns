@@ -4,19 +4,16 @@ import BtnsJSON from './btnJSON';
 import Button from 'bee-button';
 import Icon from 'bee-icon';
 import Dropdown from 'bee-dropdown';
-import Menus from 'bee-menus'
-import i18n from './i18n'
+import Menus from 'bee-menus';
+import isequal from 'lodash.isequal';
 
 const Item = Menus.Item;
 
-// 默认权限按钮数组是全部
-let defaultPowerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',
-'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',
-'printpreview', 'printdesign', 'upload','addRow','delRow','copyRow',
-'max','copyToEnd','min']
+
 
 
 const propTypes = {
+    addToBtns:PropTypes.object,//所有的按钮，支持扩展
     powerBtns:PropTypes.array,// 按钮权限 code数组
     btns:PropTypes.object,// 按钮对象数组
     type:PropTypes.oneOfType(['button','line']),
@@ -25,7 +22,7 @@ const propTypes = {
     localeCookie:PropTypes.string,//当前语种的cookie key值
 };
 const defaultProps = {
-    powerBtns:defaultPowerBtns,
+    addToBtns:{},
     btns:{},
     type:'button',
     maxSize:2,
@@ -50,23 +47,44 @@ const getCookie = (name) => {
 
 
 class Btns extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            allBtns:Object.assign(BtnsJSON,this.props.addToBtns)
+        }
+    }
 
+    componentWillReceiveProps(nextProps){
+        if('addToBtns' in nextProps){
+            if(isequal(this.state.allBtns,Object.assign(BtnsJSON,nextProps.addToBtns))){
+                this.setState({
+                    allBtns:Object.assign(BtnsJSON,nextProps.addToBtns)
+                })
+            }
+        }
+    }
 
     renderBtns=()=>{
         let { btns, type, maxSize, powerBtns,forcePowerBtns,localeCookie } = this.props;
         let more='更多'
         if(getCookie(localeCookie)=='en_US')more='more';
         let btnArray = [];
-        Object.keys(btns).map(item=>{
-            if((forcePowerBtns.indexOf(item)!=-1)||(powerBtns.indexOf(item)!=-1)){
+        if(powerBtns){
+            Object.keys(btns).map(item=>{
+                if((forcePowerBtns.indexOf(item)!=-1)||(powerBtns.indexOf(item)!=-1)){
+                    let btn = this.renderBtn(item)
+                    if(btn)btnArray.push(btn)
+                }
+            
+            })
+            
+        }else{
+            Object.keys(btns).map(item=>{
                 let btn = this.renderBtn(item)
                 if(btn)btnArray.push(btn)
-            }
-            // else if(powerBtns.indexOf(item)!=-1){
-            //     let btn = this.renderBtn(item)
-            //     if(btn)btnArray.push(btn)
-            // }
-        })
+            })
+        }
+        
         if(type=='line'){
             if(btnArray.length>maxSize){
                 let menusList = (<Menus>
@@ -97,7 +115,7 @@ class Btns extends Component {
     renderBtn=(key)=>{
         if(!this.props.btns.hasOwnProperty(key))return;
         let itemProps = this.props.btns[key];
-        let { colors,className,name_zh_CN:name,name_zh_TW,name_en_US} = BtnsJSON[key];
+        let { colors,className,name_zh_CN:name,name_zh_TW,name_en_US} = this.state.allBtns[key];
         let clss = 'ac-btns-item '+className;
         if(itemProps){
             if(itemProps.className)clss+=' '+itemProps.className;
@@ -105,7 +123,7 @@ class Btns extends Component {
         }
         if(getCookie(this.props.localeCookie)=='zh_TW')name=name_zh_TW;
         if(getCookie(this.props.localeCookie)=='en_US')name=name_en_US;
-        if(BtnsJSON[key]){
+        if(this.state.allBtns[key]){
             if(itemProps&&itemProps.node){
                 return itemProps.node
             }else{
