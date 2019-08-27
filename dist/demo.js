@@ -37477,7 +37477,7 @@
 	        'className': 'ac-btns-printdesign'
 	    },
 	    'upload': { //上传
-	        'colors': 'write',
+	        'colors': 'primary',
 	        'name_zh_CN': '上传',
 	        'name_zh_TW': '上傳',
 	        'name_en_US': 'Upload',
