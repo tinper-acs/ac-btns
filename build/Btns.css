@@ -47,6 +47,10 @@
     min-width: auto; }
     .ac-btns button.ac-btns-item.u-button.ac-btns-min .uf {
       font-size: 19px; }
+  .ac-btns button.ac-btns-item.u-button.u-button[disabled], .ac-btns button.ac-btns-item.u-button.u-button[disabled]:hover {
+    background-color: #dfe1e6;
+    border-color: #dfe1e6;
+    color: #fff; }
 
 .u-button-group .ac-btns .u-button {
   float: left;

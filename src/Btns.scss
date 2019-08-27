@@ -62,6 +62,12 @@ $primaryColor : #e14c46;
                 font-size: 19px;
             }
         }
+
+        &.u-button[disabled],&.u-button[disabled]:hover{
+            background-color: #dfe1e6;
+            border-color: #dfe1e6;
+            color: #fff;
+        }
         
     }
     
