@@ -12,6 +12,13 @@ exports["default"] = {
         'hotkey': 'alt+n',
         'className': 'ac-btns-add'
     },
+    'detail': { //详情
+        'colors': 'write',
+        'name_zh_CN': '详情',
+        'name_zh_TW': '詳情',
+        'name_en_US': 'Details',
+        'className': 'ac-btns-detail'
+    },
     'search': { //查询
         'colors': 'primary',
         'name_zh_CN': '查询',
