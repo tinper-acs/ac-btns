@@ -5,7 +5,8 @@
  *
  */
 import React, { Component } from 'react';
-import Button from 'bee-button'
+import Button from 'bee-button';
+import ButtonGroup from 'bee-button-group';
 import Btns from '../../src'
 
 
@@ -140,11 +141,46 @@ let btns = {
             console.log('disabled')
         }
     },
+    
 }
 class Demo1 extends Component {
 
     render() {
-        return <Btns btns = {btns} />
+        return (
+            <div>
+                <div>
+                    <Btns btns = {btns} />
+                </div>
+                <ButtonGroup>
+                    <Btns
+                        btns={{
+                            first:{
+                                onClick: () => {
+                                    console.log('first')
+                                }
+                            },
+                            previous:{
+                                onClick: () => {
+                                    console.log('previous')
+                                }
+                            },
+                            next:{
+                                onClick: () => {
+                                    console.log('next')
+                                }
+                            },
+                            last:{
+                                onClick: () => {
+                                    console.log('last')
+                                }
+                            }
+                        }}
+                    />
+                </ButtonGroup>
+            </div>
+            
+        )
+        
     }
 }
 export default Demo1

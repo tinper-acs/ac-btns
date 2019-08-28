@@ -189,6 +189,34 @@ exports["default"] = {
         'name_zh_TW': '停用',
         'name_en_US': 'Disabled',
         'className': 'ac-btns-disabled'
+    },
+    'next': { //下一条
+        'colors': 'write',
+        'name_zh_CN': '下一条',
+        'name_zh_TW': '下一條',
+        'name_en_US': 'Next',
+        'className': 'ac-btns-next'
+    },
+    'previous': { //上一条
+        'colors': 'write',
+        'name_zh_CN': '上一条',
+        'name_zh_TW': '上一條',
+        'name_en_US': 'Previous',
+        'className': 'ac-btns-previous'
+    },
+    'first': { //第一条
+        'colors': 'write',
+        'name_zh_CN': '第一条',
+        'name_zh_TW': '第一條',
+        'name_en_US': 'First',
+        'className': 'ac-btns-first'
+    },
+    'last': { //最后一条
+        'colors': 'write',
+        'name_zh_CN': '最后一条',
+        'name_zh_TW': '最後一條',
+        'name_en_US': 'Last',
+        'className': 'ac-btns-last'
     }
 };
 module.exports = exports['default'];

@@ -179,26 +179,50 @@ var Btns = function (_Component) {
                             case 'search':
                                 return _react2["default"].createElement(
                                     _beeButton2["default"],
-                                    _extends({ key: key }, itemProps, { colors: colors, className: clss }),
+                                    _extends({ key: key }, itemProps, { colors: colors, className: clss, title: name }),
                                     _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
                                 );
                             case 'clear':
                                 return _react2["default"].createElement(
                                     _beeButton2["default"],
-                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
                                     _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
                                 );
                             case 'max':
                                 return _react2["default"].createElement(
                                     _beeButton2["default"],
-                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
                                     _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-maxmize' })
                                 );
                             case 'min':
                                 return _react2["default"].createElement(
                                     _beeButton2["default"],
-                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
                                     _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-minimize' })
+                                );
+                            case 'first':
+                                return _react2["default"].createElement(
+                                    _beeButton2["default"],
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-2arrow-left' })
+                                );
+                            case 'next':
+                                return _react2["default"].createElement(
+                                    _beeButton2["default"],
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-right' })
+                                );
+                            case 'previous':
+                                return _react2["default"].createElement(
+                                    _beeButton2["default"],
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-left' })
+                                );
+                            case 'last':
+                                return _react2["default"].createElement(
+                                    _beeButton2["default"],
+                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-2arrow-right' })
                                 );
                             default:
                                 return _react2["default"].createElement(

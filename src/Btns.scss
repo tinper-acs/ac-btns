@@ -43,7 +43,7 @@ $primaryColor : #e14c46;
         }
         &.ac-btns-clear{
             min-width: auto;
-            border-color: #d0d0d0;
+            // border-color: #d0d0d0;
             color: #111;
             padding: 4px 0;
             background-color: #fff;
@@ -62,6 +62,12 @@ $primaryColor : #e14c46;
                 font-size: 19px;
             }
         }
+        &.ac-btns-first,&.ac-btns-previous,&.ac-btns-next,&.ac-btns-last{
+            padding: 3px;
+            min-width: auto;
+            height: 32px;
+        }
+        
 
         &.u-button[disabled],&.u-button[disabled]:hover{
             background: #fff;
@@ -87,6 +93,9 @@ $primaryColor : #e14c46;
         .u-button:first-child:not(:last-child):not(.dropdown-toggle){
             border-bottom-right-radius: 0;
             border-top-right-radius: 0;
+        }
+        .u-button:not(:first-child):not(:last-child):not(.dropdown-toggle){
+            border-radius: 0;
         }
         .u-button:last-child:not(:first-child){
             border-bottom-left-radius: 0;

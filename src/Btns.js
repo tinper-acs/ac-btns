@@ -130,20 +130,36 @@ class Btns extends Component {
                 if(this.props.type=='button'){
                     switch(key){
                         case 'search':
-                            return <Button key={key} {...itemProps} colors={colors} className={clss}>
+                            return <Button key={key} {...itemProps} colors={colors} className={clss} title={name}>
                                         <Icon type='uf-search-light-2'/>
                                     </Button>
                         case 'clear':
-                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`} title={name}>
                                         <Icon type='uf-clean'/>
                                     </Button>
                         case 'max':
-                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`} title={name}>
                                         <Icon type='uf-maxmize'/>
                                     </Button>
                         case 'min':
-                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`} title={name}>
                                         <Icon type='uf-minimize'/>
+                                    </Button>
+                        case 'first':
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`} title={name}>
+                                        <Icon type='uf-2arrow-left'/>
+                                    </Button>
+                        case 'next':
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`} title={name}>
+                                        <Icon type='uf-arrow-right'/>
+                                    </Button>
+                        case 'previous':
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`} title={name}>
+                                        <Icon type='uf-arrow-left'/>
+                                    </Button>
+                        case 'last':
+                            return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`} title={name}>
+                                        <Icon type='uf-2arrow-right'/>
                                     </Button>
                         default:
                             return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>{name}</Button>
