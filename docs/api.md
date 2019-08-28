@@ -62,6 +62,13 @@
         'hotkey':'alt+n',
         'className':'ac-btns-add'
     },
+    'detail':{ //详情
+        'colors':'write',
+        'name_zh_CN':'详情',
+        'name_zh_TW':'詳情',
+        'name_en_US':'Details',
+        'className':'ac-btns-detail'
+    },
     'search':{//查询
         'colors':'primary',
         'name_zh_CN':'查询',
@@ -157,7 +164,7 @@
         'className':'ac-btns-printdesign'
     },
     'upload':{//上传
-        'colors':'write',
+        'colors':'primary',
         'name_zh_CN':'上传',
         'name_zh_TW':'上傳',
         'name_en_US':'Upload',
@@ -232,6 +239,34 @@
         'name_zh_TW':'停用',
         'name_en_US':'Disabled',
         'className':'ac-btns-disabled'
+    },
+    'next':{//下一条
+        'colors':'write',
+        'name_zh_CN':'下一条',
+        'name_zh_TW':'下一條',
+        'name_en_US':'Next',
+        'className':'ac-btns-next'
+    },
+    'previous':{//上一条
+        'colors':'write',
+        'name_zh_CN':'上一条',
+        'name_zh_TW':'上一條',
+        'name_en_US':'Previous',
+        'className':'ac-btns-previous'
+    },
+    'first':{//第一条
+        'colors':'write',
+        'name_zh_CN':'第一条',
+        'name_zh_TW':'第一條',
+        'name_en_US':'First',
+        'className':'ac-btns-first'
+    },
+    'last':{//最后一条
+        'colors':'write',
+        'name_zh_CN':'最后一条',
+        'name_zh_TW':'最後一條',
+        'name_en_US':'Last',
+        'className':'ac-btns-last'
     },
 }
 
