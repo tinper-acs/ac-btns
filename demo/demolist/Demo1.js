@@ -16,6 +16,11 @@ let btns = {
             console.log('add')
         }
     },
+    confirm: {
+        onClick: () => {
+            console.log('confirm')
+        }
+    },
     search:{
         onClick: () => {
             console.log('search')

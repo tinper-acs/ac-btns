@@ -12,6 +12,13 @@ exports["default"] = {
         'hotkey': 'alt+n',
         'className': 'ac-btns-add'
     },
+    'confirm': { //确认
+        'colors': 'primary',
+        'name_zh_CN': '确认',
+        'name_zh_TW': '確認',
+        'name_en_US': 'Confirm',
+        'className': 'ac-btns-confirm'
+    },
     'detail': { //详情
         'colors': 'write',
         'name_zh_CN': '详情',
