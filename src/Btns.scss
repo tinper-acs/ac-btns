@@ -9,6 +9,9 @@ $primaryColor : #e14c46;
     span.ac-btns-item{
         margin-right: 6px;
         color: #0073e1;
+        &[disabled]{
+            color: #dfe1e6;
+        }
     }
     button.ac-btns-item.u-button{
         box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);

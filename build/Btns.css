@@ -5,6 +5,8 @@
 .ac-btns span.ac-btns-item {
   margin-right: 6px;
   color: #0073e1; }
+  .ac-btns span.ac-btns-item[disabled] {
+    color: #dfe1e6; }
 
 .ac-btns button.ac-btns-item.u-button {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2); }

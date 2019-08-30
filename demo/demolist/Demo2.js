@@ -1,27 +1,37 @@
 /**
  *
  * @title 不使用 Button 按钮
- * @description isBtn={false} 
+ * @description type='line'  使用与表格行内操作列
  *
  */
 import React, { Component } from 'react';
 import Btns from '../../src'
 
 
-let powerBtns = ['add', 'search', 'clear', 'export', 'save', 'cancel',
-                'update', 'delete', 'pbmsubmit', 'pbmcancle', 'pbmapprove',
-                'printpreview', 'printdesign', 'upload','addRow','delRow','copyRow',
-                'max','copyToEnd']
-
-let btns = {
+let btnsAll = {
     add: {
         onClick: () => {
             console.log('add')
         }
     },
-    search: {
+    confirm: {
+        onClick: () => {
+            console.log('confirm')
+        }
+    },
+    search:{
         onClick: () => {
             console.log('search')
+        }
+    },
+    detail:{
+        onClick: () => {
+            console.log('detail')
+        }
+    },
+    cancel:{
+        onClick: () => {
+            console.log('cancel')
         }
     },
     clear: {
@@ -109,12 +119,76 @@ let btns = {
             console.log('max')
         }
     },
+    min: {
+        onClick: () => {
+            console.log('min')
+        }
+    },
+    organizationChat:{
+        onClick: () => {
+            console.log('organizationChat')
+        }
+    },
+    download:{
+        onClick: () => {
+            console.log('download')
+        }
+    },
+    enable:{
+        onClick: () => {
+            console.log('enable')
+        }
+    },
+    disabled:{
+        onClick: () => {
+            console.log('disabled')
+        }
+    },
+    download:{
+        onClick: () => {
+            console.log('download')
+        }
+    },
+    
+}
+
+let btns = {
+    update: {
+        onClick: () => {
+            console.log('add')
+        }
+    },
+    pbmsubmit: {
+        onClick: () => {
+            console.log('confirm')
+        }
+    },
+    detail:{
+        onClick: () => {
+            console.log('detail')
+        }
+    },
+    enable: {
+        onClick: () => {
+            console.log('clear')
+        }
+    },
+    disabled: {
+        onClick: () => {
+            console.log('clear')
+        }
+    },
 }
 
 class Demo1 extends Component {
 
     render() {
-        return <Btns type='line' btns = {btns} powerBtns={powerBtns}/>
+        return <div className='demo2'>
+            <div className='demo2-title'> 超过3个换更多按钮 </div>
+            <Btns type='line' btns = {btns} />
+            <div className='demo2-title'>全部展示</div>
+            <Btns type='line' btns = {btnsAll} maxSize={99  }/>
+        </div>
     }
 }
 export default Demo1

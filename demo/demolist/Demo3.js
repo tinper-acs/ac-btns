@@ -113,7 +113,10 @@ let btns = {
 class Demo1 extends Component {
 
     render() {
-        return <Btns btns = {btns} powerBtns={powerBtns}/>
+        return <div>
+            <Btns btns = {btns} powerBtns={powerBtns}/>
+            
+        </div>
     }
 }
 export default Demo1
