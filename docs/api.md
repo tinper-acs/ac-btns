@@ -59,7 +59,6 @@
         'name_zh_CN':'新增',
         'name_zh_TW':'新增',
         'name_en_US':'New',
-        'hotkey':'alt+n',
         'className':'ac-btns-add'
     },
     'detail':{ //详情
@@ -74,7 +73,6 @@
         'name_zh_CN':'查询',
         'name_zh_TW':'查詢',
         'name_en_US':'Search',
-        'hotkey':'ctrl+enter',
         'className':'ac-btns-search'
     },
     'clear':{//清空
@@ -82,7 +80,6 @@
         'name_zh_CN':'清空',
         'name_zh_TW':'清空',
         'name_en_US':'Clear',
-        'hotkey':'ctrl+r',
         'className':'ac-btns-clear'
     },
     'export':{//导出
@@ -90,7 +87,6 @@
         'name_zh_CN':'导出',
         'name_zh_TW':'導出',
         'name_en_US':'Export',
-        'hotkey':'',
         'className':'ac-btns-export'
     },
     'save':{//保存
@@ -98,7 +94,6 @@
         'name_zh_CN':'保存',
         'name_zh_TW':'保存',
         'name_en_US':'Save',
-        'hotkey':'',
         'className':'ac-btns-save'
     },
     'cancel':{//取消
@@ -106,7 +101,6 @@
         'name_zh_CN':'取消',
         'name_zh_TW':'取消',
         'name_en_US':'Cancel',
-        'hotkey':'',
         'className':'ac-btns-cancel'
     },
     'update':{//修改
@@ -114,7 +108,6 @@
         'name_zh_CN':'修改',
         'name_zh_TW':'修改',
         'name_en_US':'Modify',
-        'hotkey':'',
         'className':'ac-btns-update'
     },
     'delete':{//删除
@@ -122,7 +115,6 @@
         'name_zh_CN':'删除',
         'name_zh_TW':'刪除',
         'name_en_US':'Delete',
-        'hotkey':'',
         'className':'ac-btns-delete'
     },
     'pbmsubmit':{//提交
@@ -130,7 +122,6 @@
         'name_zh_CN':'提交',
         'name_zh_TW':'提交',
         'name_en_US':'Submit',
-        'hotkey':'',
         'className':'ac-btns-pbmsubmit'
     },
     'pbmcancle':{//撤回
@@ -138,7 +129,6 @@
         'name_zh_CN':'撤回',
         'name_zh_TW':'撤回',
         'name_en_US':'Recall',
-        'hotkey':'',
         'className':'ac-btns-pbmcancle'
     },
     'pbmapprove':{//审批
@@ -146,7 +136,6 @@
         'name_zh_CN':'审批',
         'name_zh_TW':'審批',
         'name_en_US':'Approval',
-        'hotkey':'',
         'className':'ac-btns-pbmapprove'
     },
     'printpreview':{//打印预览
