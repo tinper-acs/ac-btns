@@ -1,12 +1,13 @@
 # 编程模型所有按钮 Btns
 
+项目中需要引入`tinper-bee`的样式文件
 
 ## 何时使用
 
 
 ## 如何使用
 
-```
+```js
     import Btns from 'ac-btns';
     import 'ac-btns/build/Btns.css';
 
