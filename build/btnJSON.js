@@ -127,6 +127,13 @@ exports["default"] = {
         'name_en_US': 'Upload',
         'className': 'ac-btns-upload'
     },
+    'reupload': { //重新上传
+        'colors': 'primary',
+        'name_zh_CN': '重新上传',
+        'name_zh_TW': '重新上傳',
+        'name_en_US': 'Re-upload',
+        'className': 'ac-btns-reupload'
+    },
     'download': { //下载
         'colors': 'write',
         'name_zh_CN': '下载',

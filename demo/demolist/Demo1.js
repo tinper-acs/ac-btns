@@ -96,6 +96,11 @@ let btns = {
             console.log('upload')
         }
     },
+    reupload: {
+        onClick: () => {
+            console.log('reupload')
+        }
+    },
     addRow: {
         onClick: () => {
             console.log('addRow')
