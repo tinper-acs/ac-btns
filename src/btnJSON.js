@@ -45,6 +45,14 @@ export default {
         'hotkey':'',
         'className':'ac-btns-export'
     },
+    'import':{//导入
+        'colors':'write',
+        'name_zh_CN':'导入',
+        'name_zh_TW':'導入',
+        'name_en_US':'Import',
+        'hotkey':'',
+        'className':'ac-btns-import'
+    },
     'save':{//保存
         'colors':'primary',
         'name_zh_CN':'保存',

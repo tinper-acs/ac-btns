@@ -46,6 +46,11 @@ let btns = {
             console.log('export')
         }
     },
+    import: {
+        onClick: () => {
+            console.log('import')
+        }
+    },
     save: {
         onClick: () => {
             console.log('save')
