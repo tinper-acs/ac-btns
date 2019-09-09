@@ -1,3 +1,13 @@
+<a name="0.0.24"></a>
+## [0.0.24](https://github.com/tinper-bee/ac-btns/compare/v0.0.23...v0.0.24) (2019-09-09)
+
+
+### Features
+
+* **ac-btns:** 指派 ([8d5487b](https://github.com/tinper-bee/ac-btns/commit/8d5487b))
+
+
+
 <a name="0.0.23"></a>
 ## [0.0.23](https://github.com/tinper-bee/ac-btns/compare/v0.0.22...v0.0.23) (2019-09-07)
 
