@@ -76,6 +76,11 @@ let btns = {
             console.log('pbmsubmit')
         }
     },
+    appoint: {
+        onClick: () => {
+            console.log('appoint')
+        }
+    },
     pbmcancle: {
         onClick: () => {
             console.log('pbmcancle')

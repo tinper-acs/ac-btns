@@ -109,6 +109,14 @@ export default {
         'hotkey':'',
         'className':'ac-btns-pbmapprove'
     },
+    'appoint': { //指派
+        'colors': 'write',
+        'name_zh_CN': '指派',
+        'name_zh_TW': '指派',
+        'name_en_US': 'Appoint',
+        'hotkey': '',
+        'className': 'ac-btns-appoint'
+    },
     'printpreview':{//打印预览
         'colors':'write',
         'name_zh_CN':'打印预览',
