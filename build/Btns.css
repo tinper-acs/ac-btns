@@ -4,7 +4,8 @@
 
 .ac-btns span.ac-btns-item {
   margin-right: 6px;
-  color: #0073e1; }
+  color: #0073e1;
+  font-size: 13px; }
   .ac-btns span.ac-btns-item[disabled] {
     color: #dfe1e6; }
 
