@@ -58,7 +58,6 @@ class Btns extends Component {
 
 
     onHandleClick = (e,code,func=()=>{})=>{
-        console.log('onHandleClick  '+code,e)
         this.props.onClick(e,code)
         func(e)
     }

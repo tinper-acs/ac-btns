@@ -96,7 +96,6 @@ var Btns = function (_Component) {
         _this.onHandleClick = function (e, code) {
             var func = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
 
-            console.log('onHandleClick  ' + code, e);
             _this.props.onClick(e, code);
             func(e);
         };
