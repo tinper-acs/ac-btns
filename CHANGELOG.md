@@ -1,3 +1,8 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/tinper-bee/ac-btns/compare/v0.1.3...v0.2.0) (2020-02-24)
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/tinper-bee/ac-btns/compare/v0.1.2...v0.1.3) (2020-01-03)
 
@@ -201,12 +206,16 @@
 ### Features
 
 * **ac-btn:** 新增table按钮 ([484a827](https://github.com/tinper-bee/ac-btns/commit/484a827))
-* **ac-btns:** 支持table上的操作按钮 ([eca5131](https://github.com/tinper-bee/ac-btns/commit/eca5131))
 
 
 
 <a name="0.0.5"></a>
-## [0.0.5](https://github.com/tinper-bee/ac-btns/compare/v0.0.4...v0.0.5) (2019-08-17)
+## [0.0.5](https://github.com/tinper-bee/ac-btns/compare/v0.0.4...v0.0.5) (2019-08-19)
+
+
+### Features
+
+* **ac-btns:** 支持table上的操作按钮 ([eca5131](https://github.com/tinper-bee/ac-btns/commit/eca5131))
 
 
 
