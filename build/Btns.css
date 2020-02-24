@@ -11,7 +11,12 @@
 
 .ac-btns button.ac-btns-item.u-button {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
-  font-size: 13px; }
+  font-size: 13px;
+  min-width: 60px;
+  min-height: 30px;
+  padding: 0 10px;
+  min-height: 28px;
+  line-height: 28px; }
   .ac-btns button.ac-btns-item.u-button:last-child {
     margin-right: 0; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-write {
@@ -32,13 +37,15 @@
       background-color: #d7332c;
       color: #fff; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-search {
-    min-width: 48px;
-    padding: 4px 5px;
+    min-width: 30px;
+    padding: 0;
+    line-height: 28px;
     background-color: #e14c46; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-clear, .ac-btns button.ac-btns-item.u-button.ac-btns-empty {
-    min-width: auto;
+    min-width: 30px;
+    padding: 0;
+    line-height: 28px;
     color: #111;
-    padding: 4px 0;
     background-color: #fff; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-max {
     padding: 3px;

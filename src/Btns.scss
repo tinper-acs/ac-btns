@@ -17,6 +17,11 @@ $primaryColor : #e14c46;
     button.ac-btns-item.u-button{
         box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
         font-size: 13px;
+        min-width: 60px;
+        min-height: 30px;
+        padding: 0 10px;
+        min-height: 28px;
+        line-height: 28px;
         &:last-child{
             margin-right: 0;
         }
@@ -42,15 +47,16 @@ $primaryColor : #e14c46;
             }
         }
         &.ac-btns-search{
-            min-width: 48px;
-            padding: 4px 5px;
+            min-width: 30px;
+            padding: 0;
+            line-height: 28px;
             background-color: $primaryColor;
         }
         &.ac-btns-clear, &.ac-btns-empty{
-            min-width: auto;
-            // border-color: #d0d0d0;
+            min-width: 30px;
+            padding: 0;
+            line-height: 28px;
             color: #111;
-            padding: 4px 0;
             background-color: #fff;
         }
         &.ac-btns-max{
