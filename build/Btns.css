@@ -36,7 +36,7 @@
     .ac-btns button.ac-btns-item.u-button.u-button-primary:hover {
       background-color: #d7332c;
       color: #fff; }
-  .ac-btns button.ac-btns-item.u-button.ac-btns-search, .ac-btns button.ac-btns-item.u-button.ac-btns-clear, .ac-btns button.ac-btns-item.u-button.ac-btns-empty, .ac-btns button.ac-btns-item.u-button.ac-btns-first, .ac-btns button.ac-btns-item.u-button.ac-btns-previous, .ac-btns button.ac-btns-item.u-button.ac-btns-next, .ac-btns button.ac-btns-item.u-button.ac-btns-last {
+  .ac-btns button.ac-btns-item.u-button.ac-btns-search, .ac-btns button.ac-btns-item.u-button.ac-btns-clear, .ac-btns button.ac-btns-item.u-button.ac-btns-empty, .ac-btns button.ac-btns-item.u-button.ac-btns-first, .ac-btns button.ac-btns-item.u-button.ac-btns-previous, .ac-btns button.ac-btns-item.u-button.ac-btns-next, .ac-btns button.ac-btns-item.u-button.ac-btns-last, .ac-btns button.ac-btns-item.u-button.ac-btns-max, .ac-btns button.ac-btns-item.u-button.ac-btns-min {
     min-width: 30px;
     padding: 0;
     line-height: 28px;

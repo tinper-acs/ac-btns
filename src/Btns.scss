@@ -46,7 +46,9 @@ $primaryColor : #e14c46;
                 color: #fff;
             }
         }
-        &.ac-btns-search,&.ac-btns-clear, &.ac-btns-empty,&.ac-btns-first,&.ac-btns-previous,&.ac-btns-next,&.ac-btns-last{
+        &.ac-btns-search,&.ac-btns-clear, &.ac-btns-empty,
+        &.ac-btns-first,&.ac-btns-previous,&.ac-btns-next,&.ac-btns-last,
+        &.ac-btns-max,&.ac-btns-min{
             min-width: 30px;
             padding: 0;
             line-height: 28px;
