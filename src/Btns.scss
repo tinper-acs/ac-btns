@@ -46,18 +46,17 @@ $primaryColor : #e14c46;
                 color: #fff;
             }
         }
-        &.ac-btns-search{
-            min-width: 30px;
-            padding: 0;
-            line-height: 28px;
-            background-color: $primaryColor;
-        }
-        &.ac-btns-clear, &.ac-btns-empty{
+        &.ac-btns-search,&.ac-btns-clear, &.ac-btns-empty,&.ac-btns-first,&.ac-btns-previous,&.ac-btns-next,&.ac-btns-last{
             min-width: 30px;
             padding: 0;
             line-height: 28px;
             color: #111;
             background-color: #fff;
+            height: 30px;
+        }
+        &.ac-btns-search{
+            background-color: $primaryColor;
+            color:#fff;
         }
         &.ac-btns-max{
             padding: 3px;
@@ -73,13 +72,6 @@ $primaryColor : #e14c46;
                 font-size: 19px;
             }
         }
-        &.ac-btns-first,&.ac-btns-previous,&.ac-btns-next,&.ac-btns-last{
-            padding: 3px;
-            min-width: auto;
-            height: 32px;
-        }
-        
-
         &.u-button[disabled],&.u-button[disabled]:hover{
             background: #fff;
             color: #dfe1e6;
