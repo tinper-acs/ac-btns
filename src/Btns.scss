@@ -1,5 +1,5 @@
 $primaryColor : #e14c46;
-
+$secondary : #eceff1;
 
 .ac-btns{
     .ac-btns-item{
@@ -44,6 +44,17 @@ $primaryColor : #e14c46;
             &:hover{
                 background-color: #d7332c;
                 color: #fff;
+            }
+        }
+        &.u-button-secondary{
+            background-color: $secondary;
+            color: #212121;
+            border: 1px solid $secondary;
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+            &:hover{
+                border: 1px solid #dfe1e6;
+                background-color: #dfe1e6;
+                color: #212121;
             }
         }
         &.ac-btns-search,&.ac-btns-clear, &.ac-btns-empty,

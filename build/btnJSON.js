@@ -138,6 +138,14 @@ exports["default"] = {
         'hotkey': '',
         'className': 'ac-btns-appoint'
     },
+    'send': { //发送
+        'colors': 'write',
+        'name_zh_CN': '发送',
+        'name_zh_TW': '發送',
+        'name_en_US': 'Send',
+        'hotkey': '',
+        'className': 'ac-btns-send'
+    },
     'printpreview': { //打印预览
         'colors': 'write',
         'name_zh_CN': '打印预览',
@@ -214,6 +222,13 @@ exports["default"] = {
         'name_zh_TW': '粘貼至末行',
         'name_en_US': 'Paste to end line',
         'className': 'ac-btns-copyToEnd'
+    },
+    'copyToHere': { //粘贴至此处
+        'colors': 'secondary',
+        'name_zh_CN': '粘贴至此处',
+        'name_zh_TW': '粘貼至此處',
+        'name_en_US': 'Paste here',
+        'className': 'ac-btns-copyToHere'
     },
     'organizationChat': { //机构图
         'colors': 'write',
