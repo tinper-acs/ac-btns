@@ -31,7 +31,7 @@
   .ac-btns button.ac-btns-item.u-button.u-button-primary {
     background-color: #e14c46;
     color: #fff;
-    border: 1px solid #f53c32;
+    border: 1px solid #e14c46;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2); }
     .ac-btns button.ac-btns-item.u-button.u-button-primary:hover {
       background-color: #d7332c;
@@ -54,7 +54,8 @@
     height: 30px; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-search {
     background-color: #e14c46;
-    color: #fff; }
+    color: #fff;
+    min-width: 52px; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-max {
     padding: 3px;
     min-width: auto; }

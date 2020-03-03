@@ -39,7 +39,7 @@ $secondary : #eceff1;
         &.u-button-primary{
             background-color: $primaryColor;
             color: #fff;
-            border: 1px solid #f53c32;
+            border: 1px solid $primaryColor;
             box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
             &:hover{
                 background-color: #d7332c;
@@ -70,6 +70,7 @@ $secondary : #eceff1;
         &.ac-btns-search{
             background-color: $primaryColor;
             color:#fff;
+            min-width: 52px;
         }
         &.ac-btns-max{
             padding: 3px;
