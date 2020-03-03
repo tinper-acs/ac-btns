@@ -1,3 +1,13 @@
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/tinper-bee/ac-btns/compare/v0.2.3...v0.2.4) (2020-03-03)
+
+
+### Features
+
+* **ac-btns:** 查询按钮等主按钮样式修改 ([93544dc](https://github.com/tinper-bee/ac-btns/commit/93544dc))
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/tinper-bee/ac-btns/compare/v0.2.2...v0.2.3) (2020-03-02)
 
