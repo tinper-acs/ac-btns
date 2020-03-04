@@ -1,3 +1,13 @@
+<a name="0.2.6"></a>
+## [0.2.6](https://github.com/tinper-bee/ac-btns/compare/v0.2.5...v0.2.6) (2020-03-04)
+
+
+### Features
+
+* **ac-btns:** 新增 type = icon 类型 ([f41746e](https://github.com/tinper-bee/ac-btns/commit/f41746e))
+
+
+
 <a name="0.2.5"></a>
 ## [0.2.5](https://github.com/tinper-bee/ac-btns/compare/v0.2.4...v0.2.5) (2020-03-04)
 
