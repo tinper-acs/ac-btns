@@ -17,10 +17,11 @@ const propTypes = {
     addToBtns:PropTypes.object,//所有的按钮，支持扩展
     powerBtns:PropTypes.array,// 按钮权限 code数组
     btns:PropTypes.object,// 按钮对象数组
-    type:PropTypes.oneOfType(['button','line']),
+    type:PropTypes.oneOfType(['button','line','icon']),
     maxSize:PropTypes.number,
     forcePowerBtns:PropTypes.array,//不受权限控制的按钮code数组
     localeCookie:PropTypes.string,//当前语种的cookie key值
+    iconTypes:PropTypes.object
 };
 const defaultProps = {
     addToBtns:{},
@@ -29,7 +30,12 @@ const defaultProps = {
     maxSize:2,
     forcePowerBtns:['cancel','search','clear','empty'],//取消、查询、清空、置空不受权限管理控制
     localeCookie:'locale',
-    onClick:()=>{}
+    onClick:()=>{},
+    iconTypes:{//默认code对应的图标
+        add:'uf-add-c-o',
+        update:'uf-pencil',
+        delete:'uf-del'
+    }
 };
 
 const getCookie = (name) => {
@@ -93,7 +99,7 @@ class Btns extends Component {
             })
         }
         
-        if(type=='line'){
+        if(type=='line'||type=='icon'){
             if(btnArray.length>maxSize){
                 let menusList = (<Menus>
                         {
@@ -182,7 +188,7 @@ class Btns extends Component {
                         default:
                             return <Button key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>{name}</Button>
                     }
-                }else{
+                }else if(this.props.type=='line'){
                     switch(key){
                         case 'search':
                             return <span key={key} {...itemProps} colors={colors} className={clss}>
@@ -203,6 +209,12 @@ class Btns extends Component {
                         default:
                             return <span key={key} {...itemProps} colors={colors} className={`ac-btns-write ${clss}`}>{name}</span>
                     }
+                }else if(this.props.type=='icon'){
+                    let { iconType,...other } = itemProps
+                    iconType = iconType?iconType:this.props.iconTypes[key];
+                    return <span key={key} {...other} colors={colors} className={clss+' icon'} title={name}>
+                            <Icon type={iconType} />
+                        </span>
                 }
             }
             

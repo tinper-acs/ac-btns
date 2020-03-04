@@ -42,6 +42,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -55,10 +57,11 @@ var propTypes = {
     addToBtns: _propTypes2["default"].object, //所有的按钮，支持扩展
     powerBtns: _propTypes2["default"].array, // 按钮权限 code数组
     btns: _propTypes2["default"].object, // 按钮对象数组
-    type: _propTypes2["default"].oneOfType(['button', 'line']),
+    type: _propTypes2["default"].oneOfType(['button', 'line', 'icon']),
     maxSize: _propTypes2["default"].number,
     forcePowerBtns: _propTypes2["default"].array, //不受权限控制的按钮code数组
-    localeCookie: _propTypes2["default"].string //当前语种的cookie key值
+    localeCookie: _propTypes2["default"].string, //当前语种的cookie key值
+    iconTypes: _propTypes2["default"].object
 };
 var defaultProps = {
     addToBtns: {},
@@ -67,7 +70,12 @@ var defaultProps = {
     maxSize: 2,
     forcePowerBtns: ['cancel', 'search', 'clear', 'empty'], //取消、查询、清空、置空不受权限管理控制
     localeCookie: 'locale',
-    onClick: function onClick() {}
+    onClick: function onClick() {},
+    iconTypes: { //默认code对应的图标
+        add: 'uf-add-c-o',
+        update: 'uf-pencil',
+        "delete": 'uf-del'
+    }
 };
 
 var getCookie = function getCookie(name) {
@@ -126,7 +134,7 @@ var Btns = function (_Component) {
                 });
             }
 
-            if (type == 'line') {
+            if (type == 'line' || type == 'icon') {
                 if (btnArray.length > maxSize) {
                     var menusList = _react2["default"].createElement(
                         _beeMenus2["default"],
@@ -254,7 +262,7 @@ var Btns = function (_Component) {
                                     name
                                 );
                         }
-                    } else {
+                    } else if (_this.props.type == 'line') {
                         switch (key) {
                             case 'search':
                                 return _react2["default"].createElement(
@@ -287,6 +295,16 @@ var Btns = function (_Component) {
                                     name
                                 );
                         }
+                    } else if (_this.props.type == 'icon') {
+                        var iconType = itemProps.iconType,
+                            other = _objectWithoutProperties(itemProps, ['iconType']);
+
+                        iconType = iconType ? iconType : _this.props.iconTypes[key];
+                        return _react2["default"].createElement(
+                            'span',
+                            _extends({ key: key }, other, { colors: colors, className: clss + ' icon', title: name }),
+                            _react2["default"].createElement(_beeIcon2["default"], { type: iconType })
+                        );
                     }
                 }
             } else {

@@ -3,11 +3,10 @@ $secondary : #eceff1;
 
 .ac-btns{
     .ac-btns-item{
-        margin-right: 6px;
+        margin-right: 8px;
         cursor: pointer;
     }
     span.ac-btns-item{
-        margin-right: 6px;
         color: #0073e1;
         font-size: 13px;
         &[disabled]{
@@ -94,6 +93,17 @@ $secondary : #eceff1;
         }
         
     }
+    //type='icon'
+    .icon{
+        &.ac-btns-add,
+        &.ac-btns-update,
+        &.ac-btns-delete{
+            color: $primaryColor;
+            .uf{
+                padding: 0;
+            }
+        }
+    }
     
 }
 
@@ -141,5 +151,13 @@ $secondary : #eceff1;
     }
     .u-dropdown-menu>.u-dropdown-menu-item-selected:hover{
         background-color: #ebecf0;
+    }
+    //type='icon'
+    .icon{
+        &.ac-btns-add,
+        &.ac-btns-update,
+        &.ac-btns-delete{
+            color: $primaryColor;
+        }
     }
 }

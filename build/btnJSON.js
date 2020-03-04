@@ -94,7 +94,7 @@ exports["default"] = {
         'colors': 'write',
         'name_zh_CN': '修改',
         'name_zh_TW': '修改',
-        'name_en_US': 'Modify',
+        'name_en_US': 'update',
         'hotkey': '',
         'className': 'ac-btns-update'
     },
