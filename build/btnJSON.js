@@ -224,7 +224,7 @@ exports["default"] = {
         'className': 'ac-btns-copyToEnd'
     },
     'copyToHere': { //粘贴至此处
-        'colors': 'secondary',
+        'colors': 'write',
         'name_zh_CN': '粘贴至此处',
         'name_zh_TW': '粘貼至此處',
         'name_en_US': 'Paste here',
