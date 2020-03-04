@@ -1,3 +1,8 @@
+<a name="0.2.5"></a>
+## [0.2.5](https://github.com/tinper-bee/ac-btns/compare/v0.2.4...v0.2.5) (2020-03-04)
+
+
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/tinper-bee/ac-btns/compare/v0.2.3...v0.2.4) (2020-03-03)
 
