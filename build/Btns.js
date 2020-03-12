@@ -38,6 +38,10 @@ var _lodash = require('lodash.isequal');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
+var _zh_CN = require('./locale/zh_CN');
+
+var _zh_CN2 = _interopRequireDefault(_zh_CN);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -60,8 +64,8 @@ var propTypes = {
     type: _propTypes2["default"].oneOfType(['button', 'line', 'icon']),
     maxSize: _propTypes2["default"].number,
     forcePowerBtns: _propTypes2["default"].array, //不受权限控制的按钮code数组
-    localeCookie: _propTypes2["default"].string, //当前语种的cookie key值
-    iconTypes: _propTypes2["default"].object
+    iconTypes: _propTypes2["default"].object,
+    locale: _propTypes2["default"].object
 };
 var defaultProps = {
     addToBtns: {},
@@ -69,28 +73,13 @@ var defaultProps = {
     type: 'button',
     maxSize: 2,
     forcePowerBtns: ['cancel', 'search', 'clear', 'empty'], //取消、查询、清空、置空不受权限管理控制
-    localeCookie: 'locale',
     onClick: function onClick() {},
     iconTypes: { //默认code对应的图标
         add: 'uf-add-c-o',
         update: 'uf-pencil',
         "delete": 'uf-del'
-    }
-};
-
-var getCookie = function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie != '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].trim();
-            if (cookie.substring(0, name.length + 1) == name + '=') {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
+    },
+    locale: _zh_CN2["default"]
 };
 
 var Btns = function (_Component) {
@@ -115,10 +104,8 @@ var Btns = function (_Component) {
                 maxSize = _this$props.maxSize,
                 powerBtns = _this$props.powerBtns,
                 forcePowerBtns = _this$props.forcePowerBtns,
-                localeCookie = _this$props.localeCookie;
+                locale = _this$props.locale;
 
-            var more = '更多';
-            if (getCookie(localeCookie) == 'en_US') more = 'more';
             var btnArray = [];
             if (powerBtns) {
                 Object.keys(btns).map(function (item) {
@@ -157,7 +144,7 @@ var Btns = function (_Component) {
                         _react2["default"].createElement(
                             'span',
                             { className: 'ac-btns-item ac-btns-more' },
-                            more
+                            locale['_more']
                         )
                     );
                     btnArray.splice(maxSize, btnArray.length - maxSize + 1, drop);
@@ -175,14 +162,10 @@ var Btns = function (_Component) {
             var itemProps = _this.props.btns[key];
             var _this$state$allBtns$k = _this.state.allBtns[key],
                 colors = _this$state$allBtns$k.colors,
-                className = _this$state$allBtns$k.className,
-                name = _this$state$allBtns$k.name_zh_CN,
-                name_zh_TW = _this$state$allBtns$k.name_zh_TW,
-                name_en_US = _this$state$allBtns$k.name_en_US;
+                className = _this$state$allBtns$k.className;
 
+            var name = _this.props.locale[key] || _btnJSON2["default"][key].name;
             var clss = 'ac-btns-item ' + className;
-            if (getCookie(_this.props.localeCookie) == 'zh_TW') name = name_zh_TW;
-            if (getCookie(_this.props.localeCookie) == 'en_US') name = name_en_US;
             if (itemProps) {
                 if (itemProps.className) clss += ' ' + itemProps.className;
                 if (itemProps.name) name = itemProps.name;
