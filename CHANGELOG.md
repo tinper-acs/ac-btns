@@ -1,3 +1,13 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/tinper-bee/ac-btns/compare/v0.2.6...v0.3.0) (2020-03-12)
+
+
+### Features
+
+* **ac-btns:** 多语功能调整 ([4a197cc](https://github.com/tinper-bee/ac-btns/commit/4a197cc))
+
+
+
 <a name="0.2.6"></a>
 ## [0.2.6](https://github.com/tinper-bee/ac-btns/compare/v0.2.5...v0.2.6) (2020-03-04)
 
