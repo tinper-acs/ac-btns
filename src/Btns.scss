@@ -70,19 +70,28 @@ $secondary : #eceff1;
             background-color: $primaryColor;
             color:#fff;
             min-width: 52px;
+            position: relative;
+            top: 1px;
+        }
+        &.ac-btns-empty,&.ac-btns-clear,&.ac-btns-search{
+            .uf{
+                font-size: 18px;
+            }
         }
         &.ac-btns-max{
             padding: 3px;
             min-width: auto;
             .uf {
-                font-size: 19px;
+                position: relative;
+                bottom: 2px;
             }
         }
         &.ac-btns-min{
             padding: 3px;
             min-width: auto;
             .uf {
-                font-size: 19px;
+                position: relative;
+                bottom: 2px;
             }
         }
         &.u-button[disabled],&.u-button[disabled]:hover{
