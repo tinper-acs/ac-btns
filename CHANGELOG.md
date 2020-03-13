@@ -1,3 +1,13 @@
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/tinper-bee/ac-btns/compare/v0.3.0...v0.3.1) (2020-03-13)
+
+
+### Features
+
+* **ac-btns:** icon图标字体大小修改 ([1fc6f09](https://github.com/tinper-bee/ac-btns/commit/1fc6f09))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/tinper-bee/ac-btns/compare/v0.2.6...v0.3.0) (2020-03-12)
 
