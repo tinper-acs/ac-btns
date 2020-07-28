@@ -44,6 +44,15 @@
       border: 1px solid #dfe1e6;
       background-color: #dfe1e6;
       color: #212121; }
+  .ac-btns button.ac-btns-item.u-button.u-button-dark {
+    background-color: #505766;
+    color: #fff;
+    border: 1px solid #505766;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2); }
+    .ac-btns button.ac-btns-item.u-button.u-button-dark:hover {
+      border: 1px solid #616875;
+      background-color: #616875;
+      color: #fff; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-search, .ac-btns button.ac-btns-item.u-button.ac-btns-clear, .ac-btns button.ac-btns-item.u-button.ac-btns-empty, .ac-btns button.ac-btns-item.u-button.ac-btns-first, .ac-btns button.ac-btns-item.u-button.ac-btns-previous, .ac-btns button.ac-btns-item.u-button.ac-btns-next, .ac-btns button.ac-btns-item.u-button.ac-btns-last, .ac-btns button.ac-btns-item.u-button.ac-btns-max, .ac-btns button.ac-btns-item.u-button.ac-btns-min {
     min-width: 30px;
     padding: 0;
@@ -58,7 +67,9 @@
     position: relative;
     top: 1px; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-empty .uf, .ac-btns button.ac-btns-item.u-button.ac-btns-clear .uf, .ac-btns button.ac-btns-item.u-button.ac-btns-search .uf {
-    font-size: 18px; }
+    font-size: 18px;
+    position: relative;
+    top: 2px; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-max {
     padding: 3px;
     min-width: auto; }
