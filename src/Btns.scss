@@ -1,6 +1,8 @@
-$primaryColor : #e14c46;
+$primaryColor : linear-gradient(90deg, #fa482e, #f32f27);
 $secondary : #eceff1;
 $grey: #505766;
+//hover
+$primary-button-bg-color-hover: linear-gradient(90deg, #f32f27, #fa482e);
 
 .ac-btns{
     .ac-btns-item{
@@ -22,6 +24,7 @@ $grey: #505766;
         padding: 0 10px;
         min-height: 28px;
         line-height: 28px;
+        transition: all .3s cubic-bezier(.645,.045,.355,1);
         &.u-button-sm{
             min-width: 44px;
             min-height: 22px;
@@ -31,23 +34,26 @@ $grey: #505766;
             margin-right: 0;
         }
         &.ac-btns-write{
-            box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
-            border-color: #d0d0d0;
-            color: #111;
+            box-shadow: none;
+            border-color: #d9d9d9;
+            color: #535a69;
             background-color: #fff;
+            font-weight: 500;
             &:hover{
-                color: #e14c46;
-                border-color: #e14c46;
-                background-color: #fff;
+                color: #505766;
+                border-color: #505766;
+                background-color: unset;
+                z-index: 2;
             }
         }
         &.u-button-primary{
-            background-color: $primaryColor;
+            background: $primaryColor;
             color: #fff;
-            border: 1px solid $primaryColor;
-            box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+            border: none;
+            box-shadow: none;
+            min-height: 30px;
             &:hover{
-                background-color: #d7332c;
+                background: $primary-button-bg-color-hover;
                 color: #fff;
             }
         }
@@ -84,7 +90,7 @@ $grey: #505766;
             height: 30px;
         }
         &.ac-btns-search{
-            background-color: $primaryColor;
+            background: $primaryColor;
             color:#fff;
             min-width: 52px;
             position: relative;
