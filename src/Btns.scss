@@ -22,6 +22,11 @@ $grey: #505766;
         padding: 0 10px;
         min-height: 28px;
         line-height: 28px;
+        &.u-button-sm{
+            min-width: 44px;
+            min-height: 22px;
+            line-height: 22px;
+        }
         &:last-child{
             margin-right: 0;
         }

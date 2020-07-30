@@ -16,6 +16,10 @@
   padding: 0 10px;
   min-height: 28px;
   line-height: 28px; }
+  .ac-btns button.ac-btns-item.u-button.u-button-sm {
+    min-width: 44px;
+    min-height: 22px;
+    line-height: 22px; }
   .ac-btns button.ac-btns-item.u-button:last-child {
     margin-right: 0; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-write {

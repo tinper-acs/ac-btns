@@ -241,7 +241,7 @@ var Btns = function (_Component) {
                             default:
                                 return _react2["default"].createElement(
                                     _beeButton2["default"],
-                                    _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
+                                    _extends({ key: key, colors: colors, className: 'ac-btns-write ' + clss }, itemProps),
                                     name
                                 );
                         }
