@@ -38,8 +38,7 @@
     background: linear-gradient(90deg, #fa482e, #f32f27);
     color: #fff;
     border: none;
-    box-shadow: none;
-    min-height: 30px; }
+    box-shadow: none; }
     .ac-btns button.ac-btns-item.u-button.u-button-primary:hover {
       background: linear-gradient(90deg, #f32f27, #fa482e);
       color: #fff; }
