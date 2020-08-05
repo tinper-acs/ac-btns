@@ -51,6 +51,8 @@ $primary-button-bg-color-hover: linear-gradient(90deg, #f32f27, #fa482e);
             color: #fff;
             border: none;
             box-shadow: none;
+            height: 30px;
+            line-height: 30px;
             &:hover{
                 background: $primary-button-bg-color-hover;
                 color: #fff;
@@ -88,6 +90,13 @@ $primary-button-bg-color-hover: linear-gradient(90deg, #f32f27, #fa482e);
             background-color: #fff;
             height: 30px;
         }
+        &.ac-btns-add{
+            .uf{
+                font-size: 13px;
+                padding: 0;
+                margin-right: 3px;
+            }
+        }
         &.ac-btns-search{
             background: $primaryColor;
             color:#fff;
@@ -119,10 +128,9 @@ $primary-button-bg-color-hover: linear-gradient(90deg, #f32f27, #fa482e);
             }
         }
         &.u-button[disabled],&.u-button[disabled]:hover{
-            background: #fff;
-            color: #dfe1e6;
-            border-color: #d0d0d0;
-            box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+            border: 1px solid #d9d9d9;
+            color: rgba(0,0,0,.25);
+            background: #f7f7f7;
         }
         
     }
