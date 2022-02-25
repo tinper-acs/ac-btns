@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import BtnsJSON from './btnJSON';
 import isequal from 'lodash.isequal';
 import locale from './locale/zh_CN'
-import { Button, Icon, Menu, Dropdown } from '@tinper/next-ui'
+import Button from 'bee-button';
+import Icon from 'bee-icon';
+import Dropdown from 'bee-dropdown';
+import Menus from 'bee-menus';
 
-const Item = Menu.Item;
+const Item = Menus.Item;
 
 const propTypes = {
     onClick:PropTypes.func,//点击按钮回调
@@ -74,13 +77,13 @@ class Btns extends Component {
         }
         if(type=='line'||type=='icon'){
             if(btnArray.length>maxSize){
-                let menusList = (<Menu>
+                let menusList = (<Menus>
                         {
                             btnArray.map((item,index)=>{
                                 if(index>maxSize-1)return <Item key={index} onClick={item.onClick}>{item}</Item>
                             })
                         }
-                    </Menu>)
+                    </Menus>)
                 let drop = (<Dropdown
                         overlayClassName='ac-btns-dropdown'
                         overlay={menusList}

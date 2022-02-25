@@ -17,7 +17,7 @@ $font-size: 12px;
             color: #dfe1e6;
         }
     }
-    button.ac-btns-item.wui-button{
+    button.ac-btns-item.u-button{
         box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
         font-size: $font-size;
         min-width: 60px;
@@ -26,7 +26,7 @@ $font-size: 12px;
         min-height: 30px;
         line-height: 30px;
         transition: all .3s cubic-bezier(.645,.045,.355,1);
-        &.wui-button-sm{
+        &.u-button-sm{
             min-width: 44px;
             min-height: 22px;
             line-height: 22px;
@@ -47,7 +47,7 @@ $font-size: 12px;
                 z-index: 2;
             }
         }
-        &.wui-button-primary{
+        &.u-button-primary{
             background: $primaryColor;
             color: #fff;
             border: none;
@@ -59,7 +59,7 @@ $font-size: 12px;
                 color: #fff;
             }
         }
-        &.wui-button-secondary{
+        &.u-button-secondary{
             background-color: $secondary;
             color: #212121;
             border: 1px solid $secondary;
@@ -70,7 +70,7 @@ $font-size: 12px;
                 color: #212121;
             }
         }
-        &.ac-btns-write.wui-button-dark{
+        &.ac-btns-write.u-button-dark{
             background-color: $grey;
             color: #fff;
             border: 1px solid $grey;
@@ -112,7 +112,7 @@ $font-size: 12px;
                 top: 2px;
             }
         }
-        &.wui-button[disabled],&.wui-button[disabled]:hover{
+        &.u-button[disabled],&.u-button[disabled]:hover{
             border: 1px solid #d9d9d9;
             color: rgba(0,0,0,.25);
             background: #f7f7f7;
@@ -134,49 +134,49 @@ $font-size: 12px;
     
 }
 
-.wui-button-group{
+.u-button-group{
     .ac-btns{
-        .wui-button{
+        .u-button{
             float: left;
             min-width: 25px;
             margin-right: 0;
         }
-        .wui-button:first-child{
+        .u-button:first-child{
             margin-left: 0;
         }
-        .wui-button:first-child:not(:last-child):not(.dropdown-toggle){
+        .u-button:first-child:not(:last-child):not(.dropdown-toggle){
             border-bottom-right-radius: 0;
             border-top-right-radius: 0;
         }
-        .wui-button:not(:first-child):not(:last-child):not(.dropdown-toggle){
+        .u-button:not(:first-child):not(:last-child):not(.dropdown-toggle){
             border-radius: 0;
         }
-        .wui-button:last-child:not(:first-child){
+        .u-button:last-child:not(:first-child){
             border-bottom-left-radius: 0;
             border-top-left-radius: 0;
         }
-        .wui-button-border+.wui-button-border,
-        .wui-button-border+.wui-button-group,
-        .wui-button-group+.wui-button-border,
-        .wui-button-group+.v-group{
+        .u-button-border+.u-button-border,
+        .u-button-border+.u-button-group,
+        .u-button-group+.u-button-border,
+        .u-button-group+.v-group{
             margin-left: 1px;
         }
 
-        .wui-button+.wui-button,
-        .wui-button+.wui-button-group,
-        .wui-button-group+.wui-button,
-        .wui-button-group+.v-group{
+        .u-button+.u-button,
+        .u-button+.u-button-group,
+        .u-button-group+.u-button,
+        .u-button-group+.v-group{
             margin-left: -1px;
         }
     }
 }
 
 .ac-btns-dropdown{
-    .wui-dropdown-menu>.wui-dropdown-menu-item-selected{
+    .u-dropdown-menu>.u-dropdown-menu-item-selected{
         color: #000;
         background-color: #fff;
     }
-    .wui-dropdown-menu>.wui-dropdown-menu-item-selected:hover{
+    .u-dropdown-menu>.u-dropdown-menu-item-selected:hover{
         background-color: #ebecf0;
     }
     //type='icon'
