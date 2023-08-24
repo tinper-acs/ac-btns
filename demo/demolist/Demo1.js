@@ -5,8 +5,7 @@
  *
  */
 import React, { Component } from 'react';
-import Button from 'bee-button';
-import ButtonGroup from 'bee-button-group';
+import { ButtonGroup } from '@tinper/next-ui';
 import Btns from '../../src'
 
 
