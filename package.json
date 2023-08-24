@@ -39,16 +39,12 @@
   "prepublishOnly": "npm run build"
  },
  "dependencies": {
+  "@tinper/next-ui": "4.4.1",
   "babel-runtime": "^6.23.0",
-  "bee-button": "^2.0.11",
-  "bee-dropdown": "^2.0.10",
-  "bee-icon": "^1.0.13",
-  "bee-menus": "^2.0.9",
   "fs-extra": "^8.1.0",
   "lodash.isequal": "^4.5.0"
  },
  "devDependencies": {
-  "bee-button-group": "^2.0.1",
   "bee-clipboard": "^2.0.0",
   "bee-drawer": "0.0.2",
   "bee-layout": "latest",

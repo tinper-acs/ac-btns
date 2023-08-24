@@ -26,21 +26,7 @@ var _zh_CN = require('./locale/zh_CN');
 
 var _zh_CN2 = _interopRequireDefault(_zh_CN);
 
-var _beeButton = require('bee-button');
-
-var _beeButton2 = _interopRequireDefault(_beeButton);
-
-var _beeIcon = require('bee-icon');
-
-var _beeIcon2 = _interopRequireDefault(_beeIcon);
-
-var _beeDropdown = require('bee-dropdown');
-
-var _beeDropdown2 = _interopRequireDefault(_beeDropdown);
-
-var _beeMenus = require('bee-menus');
-
-var _beeMenus2 = _interopRequireDefault(_beeMenus);
+var _nextUi = require('@tinper/next-ui');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -54,7 +40,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
-var Item = _beeMenus2["default"].Item;
+var Item = _nextUi.Menu.Item;
+
 
 var propTypes = {
     onClick: _propTypes2["default"].func, //点击按钮回调
@@ -123,7 +110,7 @@ var Btns = function (_Component) {
             if (type == 'line' || type == 'icon') {
                 if (btnArray.length > maxSize) {
                     var menusList = _react2["default"].createElement(
-                        _beeMenus2["default"],
+                        _nextUi.Menu,
                         null,
                         btnArray.map(function (item, index) {
                             if (index > maxSize - 1) return _react2["default"].createElement(
@@ -134,7 +121,7 @@ var Btns = function (_Component) {
                         })
                     );
                     var drop = _react2["default"].createElement(
-                        _beeDropdown2["default"],
+                        _nextUi.Dropdown,
                         {
                             overlayClassName: 'ac-btns-dropdown',
                             overlay: menusList,
@@ -184,68 +171,68 @@ var Btns = function (_Component) {
                         switch (key) {
                             case 'search':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: clss, title: name }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-search-light-2' })
                                 );
                             case 'clear':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-clean' })
                                 );
                             case 'empty':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-qingkong' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-qingkong' })
                                 );
                             case 'max':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-maxmize' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-maxmize' })
                                 );
                             case 'min':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-minimize' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-minimize' })
                                 );
                             case 'first':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-2arrow-left' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-2arrow-left' })
                                 );
                             case 'next':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-right' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-arrow-right' })
                                 );
                             case 'previous':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-left' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-arrow-left' })
                                 );
                             case 'last':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss, title: name }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-2arrow-right' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-2arrow-right' })
                                 );
                             case 'add':
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-plus' }),
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-plus' }),
                                     name
                                 );
                             default:
                                 return _react2["default"].createElement(
-                                    _beeButton2["default"],
+                                    _nextUi.Button,
                                     _extends({ key: key, colors: colors, className: 'ac-btns-write ' + clss }, itemProps),
                                     name
                                 );
@@ -256,25 +243,25 @@ var Btns = function (_Component) {
                                 return _react2["default"].createElement(
                                     'span',
                                     _extends({ key: key }, itemProps, { colors: colors, className: clss }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-search-light-2' })
                                 );
                             case 'clear':
                                 return _react2["default"].createElement(
                                     'span',
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-clean' })
                                 );
                             case 'empty':
                                 return _react2["default"].createElement(
                                     'span',
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-qingkong' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-qingkong' })
                                 );
                             case 'max':
                                 return _react2["default"].createElement(
                                     'span',
                                     _extends({ key: key }, itemProps, { colors: colors, className: 'ac-btns-write ' + clss }),
-                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-maxmize' })
+                                    _react2["default"].createElement(_nextUi.Icon, { type: 'uf-maxmize' })
                                 );
                             default:
                                 return _react2["default"].createElement(
@@ -291,7 +278,7 @@ var Btns = function (_Component) {
                         return _react2["default"].createElement(
                             'span',
                             _extends({ key: key }, other, { colors: colors, className: clss + ' icon', title: name }),
-                            _react2["default"].createElement(_beeIcon2["default"], { type: iconType })
+                            _react2["default"].createElement(_nextUi.Icon, { type: iconType })
                         );
                     }
                 }

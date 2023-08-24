@@ -1,3 +1,4 @@
+$prefix: wui;
 $primaryColor : linear-gradient(90deg, #fa482e, #f32f27);
 $secondary : #eceff1;
 $grey: #505766;
@@ -17,7 +18,7 @@ $font-size: 12px;
             color: #dfe1e6;
         }
     }
-    button.ac-btns-item.u-button{
+    button.ac-btns-item.#{$prefix}-button{
         box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
         font-size: $font-size;
         min-width: 60px;
@@ -26,7 +27,7 @@ $font-size: 12px;
         min-height: 30px;
         line-height: 30px;
         transition: all .3s cubic-bezier(.645,.045,.355,1);
-        &.u-button-sm{
+        &.#{$prefix}-button-sm{
             min-width: 44px;
             min-height: 22px;
             line-height: 22px;
@@ -47,7 +48,7 @@ $font-size: 12px;
                 z-index: 2;
             }
         }
-        &.u-button-primary{
+        &.#{$prefix}-button-primary{
             background: $primaryColor;
             color: #fff;
             border: none;
@@ -59,7 +60,7 @@ $font-size: 12px;
                 color: #fff;
             }
         }
-        &.u-button-secondary{
+        &.#{$prefix}-button-secondary{
             background-color: $secondary;
             color: #212121;
             border: 1px solid $secondary;
@@ -70,7 +71,7 @@ $font-size: 12px;
                 color: #212121;
             }
         }
-        &.ac-btns-write.u-button-dark{
+        &.ac-btns-write.#{$prefix}-button-dark{
             background-color: $grey;
             color: #fff;
             border: 1px solid $grey;
@@ -112,7 +113,7 @@ $font-size: 12px;
                 top: 2px;
             }
         }
-        &.u-button[disabled],&.u-button[disabled]:hover{
+        &.#{$prefix}-button[disabled],&.#{$prefix}-button[disabled]:hover{
             border: 1px solid #d9d9d9;
             color: rgba(0,0,0,.25);
             background: #f7f7f7;
@@ -134,49 +135,49 @@ $font-size: 12px;
     
 }
 
-.u-button-group{
+.#{$prefix}-button-group{
     .ac-btns{
-        .u-button{
+        .#{$prefix}-button{
             float: left;
             min-width: 25px;
             margin-right: 0;
         }
-        .u-button:first-child{
+        .#{$prefix}-button:first-child{
             margin-left: 0;
         }
-        .u-button:first-child:not(:last-child):not(.dropdown-toggle){
+        .#{$prefix}-button:first-child:not(:last-child):not(.dropdown-toggle){
             border-bottom-right-radius: 0;
             border-top-right-radius: 0;
         }
-        .u-button:not(:first-child):not(:last-child):not(.dropdown-toggle){
+        .#{$prefix}-button:not(:first-child):not(:last-child):not(.dropdown-toggle){
             border-radius: 0;
         }
-        .u-button:last-child:not(:first-child){
+        .#{$prefix}-button:last-child:not(:first-child){
             border-bottom-left-radius: 0;
             border-top-left-radius: 0;
         }
-        .u-button-border+.u-button-border,
-        .u-button-border+.u-button-group,
-        .u-button-group+.u-button-border,
-        .u-button-group+.v-group{
+        .#{$prefix}-button-border+.#{$prefix}-button-border,
+        .#{$prefix}-button-border+.#{$prefix}-button-group,
+        .#{$prefix}-button-group+.#{$prefix}-button-border,
+        .#{$prefix}-button-group+.v-group{
             margin-left: 1px;
         }
 
-        .u-button+.u-button,
-        .u-button+.u-button-group,
-        .u-button-group+.u-button,
-        .u-button-group+.v-group{
+        .#{$prefix}-button+.#{$prefix}-button,
+        .#{$prefix}-button+.#{$prefix}-button-group,
+        .#{$prefix}-button-group+.#{$prefix}-button,
+        .#{$prefix}-button-group+.v-group{
             margin-left: -1px;
         }
     }
 }
 
 .ac-btns-dropdown{
-    .u-dropdown-menu>.u-dropdown-menu-item-selected{
+    .#{$prefix}-dropdown-menu>.#{$prefix}-dropdown-menu-item-selected{
         color: #000;
         background-color: #fff;
     }
-    .u-dropdown-menu>.u-dropdown-menu-item-selected:hover{
+    .#{$prefix}-dropdown-menu>.#{$prefix}-dropdown-menu-item-selected:hover{
         background-color: #ebecf0;
     }
     //type='icon'
