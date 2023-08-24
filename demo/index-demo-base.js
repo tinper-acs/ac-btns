@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Con, Row, Col } from 'bee-layout';
-import { Panel } from 'bee-panel';
-import Drawer from 'bee-drawer';
-import Clipboard from 'bee-clipboard'; 
-
+import { Drawer, Clipboard, Collapse, Row, Col } from '@tinper/next-ui';
+const { Panel } = Collapse;
 
 
 {demolist}
@@ -16,7 +13,8 @@ class Demo extends Component {
             open: false
         }
     }
-    handleClick=()=> {
+    handleClick=(e)=> {
+        e.stopPropagation();
         this.setState({ open: !this.state.open })
     }
     fCloseDrawer=()=>{
@@ -36,8 +34,8 @@ class Demo extends Component {
             </div>
         );
         return (
-            <Col md={12} id={title.trim()} className='component-demo'>
-            <Panel header={header}>
+            <Col md={24} id={title.trim()} className='component-demo'>
+            <Panel header={header} defaultExpanded>
                 {example}
             </Panel>
            

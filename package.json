@@ -1,6 +1,6 @@
 {
  "name": "ac-btns",
- "version": "2.0.1",
+ "version": "3.0.2",
  "description": "Btns ui component for react",
  "keywords": [
   "react",
@@ -45,10 +45,6 @@
   "lodash.isequal": "^4.5.0"
  },
  "devDependencies": {
-  "bee-clipboard": "^2.0.0",
-  "bee-drawer": "0.0.2",
-  "bee-layout": "latest",
-  "bee-panel": "latest",
   "chai": "^3.5.0",
   "console-polyfill": "~0.2.1",
   "cz-conventional-changelog": "^2.1.0",

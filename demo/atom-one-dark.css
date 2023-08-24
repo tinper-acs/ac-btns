@@ -95,11 +95,11 @@ hue-6-2: #e6c07b
   text-decoration: underline;
 }
 
-.component-demo .u-panel {
+.component-demo .wui-panel {
   padding: 18px 20px;
   border: 1px solid #F0F0F0;
 }
-.component-demo .u-panel-default .u-panel-heading{
+.component-demo .wui-panel-default .wui-panel-heading{
   background-color: #fff;
   padding: 0;
   position: relative;
@@ -123,7 +123,7 @@ hue-6-2: #e6c07b
   font-size: 14px;
   cursor: pointer;
 }
-.component-demo .u-panel .u-panel-body{
+.component-demo .wui-panel .wui-panel-body{
   padding: 0;
 }
 
@@ -132,7 +132,7 @@ hue-6-2: #e6c07b
 }
 
 
-.component-drawerc .drawer-body {
+.component-drawerc .wui-drawer-body {
   padding: 20px 20px;
 }
 .component-drawerc .component-code-copy {
@@ -152,7 +152,7 @@ hue-6-2: #e6c07b
   margin-top: 20px;
 }
 
-.component-drawerc .component-code-copy .u-clipboard{
+.component-drawerc .component-code-copy .wui-clipboard{
   position: absolute;
   right: 0;
 }
@@ -165,7 +165,7 @@ hue-6-2: #e6c07b
   width: 0;
   height: 100%;
 }
-.component-drawerc .drawer-mask{
+.component-drawerc .wui-drawer-mask{
   background-color: rgba(0,0,0,.3);
   width: 100%;
   height: 100%;
@@ -174,47 +174,46 @@ hue-6-2: #e6c07b
   left: 0;
   transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
 }
-.component-drawerc .drawer-close{
+.component-drawerc .wui-drawer-close{
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 20px;
   cursor: pointer;
 }
-.component-drawerc .drawer{
+.component-drawerc .wui-drawer{
   position: fixed;
   background-color: #fff;
   transition: transform 300ms ease-in-out;
   overflow: auto;
 }
-.component-drawerc .drawer-left{
+.component-drawerc .wui-drawer-left{
   top: 0;
   left: 0;
   height: 100%;
 }
-.component-drawerc .drawer-right{
+.component-drawerc .wui-drawer-right{
   top: 0;
   right: 0;
   height: 100%;
 }
-.component-drawerc .drawer-top{
+.component-drawerc .wui-drawer-top{
   top: 0;
   left: 0;
   width: 100%;
 }
-.component-drawerc .drawer-bottom{
+.component-drawerc .wui-drawer-bottom{
   bottom: 0;
   left: 0;
   width: 100%;
 }
-.component-drawerc .drawer-header{
-  padding: 0 20px;
+.component-drawerc .wui-drawer-header{
   border-radius: 0;
   background: #E14C46;
   color: #fff;
   border-bottom: 1px solid #e8e8e8;
 }
-.component-drawerc .drawer-header-title{
+.component-drawerc .wui-drawer-header-title{
   margin: 0;
   color: #fff;
   height: 40px;
